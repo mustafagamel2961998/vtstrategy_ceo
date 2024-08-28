@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Fustat:wght@200..800&family=Rakkas&family=Zain:wght@200;300;400;700;800;900&display=swap');
+
+body {
+    font-family: "Zain", sans-serif;
+    scroll-behavior: smooth;
+}
+
+h1, h2 {
+    font-family: "Rakkas", serif;
+}
+
+h3, h4, h5, h6 {
+    font-family: "Fustat", sans-serif;
+}
+
+/* start variables */
+:root {
+    --main-dark: #1d2227;
+    --main-gold: #EDB46E;
+    --gold-dark: #B77C44;
+    --sec-back: #fcf3d0;
+}
+/* form style */
+input.form-control,select.form-control,textarea.form-control{
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+    border-color: var(--main-gold);
+    resize: none;
+}
+input.form-control::placeholder,select.form-control,textarea.form-control::placeholder{
+   text-align: right;
+   color: var(--gold-dark);
+   font-weight: bold;
+}
+input.form-control:focus,select.form-control:focus,textarea.form-control:focus{
+    box-shadow: 0 0 0 .25rem rgba(237, 180, 110, 0.5);
+    border-color: var(--gold-dark);
+}
+/* start global styles */
+a {
+    text-decoration: none;
+}
+
+.sec-padding {
+    padding: 50px 0;
+}
+
+.sec-back {
+    background-color: var(--sec-back);
+}
+
+.btn {
+    border-radius: 0 !important;
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+    -ms-border-radius: 0 !important;
+    -o-border-radius: 0 !important;
+    font-weight: 600;
+}
+
+.main-btn {
+    background-color: var(--main-gold);
+    color: var(--main-dark);
+}
+
+.main-btn:hover {
+    background-color: var(--gold-dark);
+}
+
+.light-btn {
+    border-color: var(--main-gold);
+    color: var(--main-gold);
+}
+
+.light-btn:hover {
+    background-color: #B77C44;
+    color: var(--main-dark);
+}
+
+/* end global style */
+
+/* start brenav and navbar */
+.brenav, .navbar {
+    background-color: var(--main-dark);
+}
+
+.brenav i, .brenav svg {
+    color: var(--gold-dark);
+}
+
+.brenav .mail a {
+    color: white;
+    font-weight: bold;
+}
+
+.brenav .social-media a {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.brenav .social-media a:hover {
+    background-color: var(--main-gold);
+}
+
+.brenav .social-media a:hover svg {
+    color: white;
+}
+
+.navbar {
+    position: sticky;
+    top: 0 !important;
+    z-index: 9999;
+    border-top: 1px solid rgba(255, 255, 255, 0.01);
+    margin-top: -1px;
+}
+
+.navbar li a {
+    color: white;
+    font-size: 1.2rem;
+}
+
+.navbar li:hover a {
+    color: var(--main-gold) !important;
+}
+
+.navbar li.active a {
+    color: var(--gold-dark);
+    font-weight: bold;
+}
+
+.navbar .btn {
+    font-size: 1.2rem;
+}
+
+.navbar-toggler {
+    border: none;
+    font-size: 1.5rem;
+}
+
+.navbar-toggler:focus svg {
+    color: var(--gold-dark) !important;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+@media (max-width:991px) {
+    .navbar-collapse {
+        text-align: center;
+    }
+
+    .navbar-collapse li {
+        background-color: #1d2022;
+        margin: 5px 0 5px 0;
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
+    }
+
+    .navbar-collapse li.active {
+        background-color: var(--main-gold);
+    }
+
+    .navbar-collapse li.active a {
+        color: var(--main-dark);
+    }
+}
+
+/* end navbar and brenav */
+
+
+/* start footer */
+.footer {
+    font-size: 16px;
+    background: var(--main-dark);
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.footer .logo a {
+    position: relative;
+}
+
+.footer h2 {
+    font-weight: normal;
+    color: var(--gold-dark);
+    margin-bottom: 30px;
+    font-size: 26px;
+    font-weight: 600;
+    font-family: "Fustat", sans-serif;
+}
+
+.footer .footer-widget ul li {
+    margin-bottom: 10px;
+}
+
+
+
+.footer p {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.footer a {
+    color: #fff;
+}
+
+.footer a:hover {
+    color: var(--main-gold);
+}
+
+.footer-social li {
+    list-style: none;
+    margin: 0 0 0 10px;
+    display: inline-block;
+}
+
+.footer-social li a {
+    height: 50px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    border-radius: 50%;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+}
+
+.footer-social li a:hover {
+    background-color: var(--main-gold);
+
+}
+.footer-social li a:hover svg{
+    color: var(--main-dark);
+}
+/* end footer */
+

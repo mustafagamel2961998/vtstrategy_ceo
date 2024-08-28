@@ -1,0 +1,23 @@
+.consultation{
+    background: none !important;
+}
+.consultation .container{
+    color: #1d2227 !important;
+}
+.consultation .heading-section h2{
+    color: #1d2227 !important;
+}
+.consultation .heading-section h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+    width: 70%;
+    height: 5px;
+    background: linear-gradient(to right, #1d2227 50%, var(--main-gold) 50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+}
