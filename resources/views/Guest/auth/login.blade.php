@@ -24,18 +24,33 @@
     <div class="overlay"></div>
     <div class="wrapper my-5">
 
-        <form action="">
+        <form action="{{route('login.method')}}" method="POST">
+            @csrf
+            {{-- @if(Session::has('domain'))
+            <script>
+                window.location.href="https://"+"{{Session::get('domain')}}" + ".vtstratgy.com"
+            </script>
+            @endif --}}
 
+        
             <h1>تسجيل الدخول</h1>
-
+            @if(Session::has('faild'))
+                {{Session::get('faild')}}
+            @endif
             <div class="input-box">
-                <input type="email" placeholder="البريد الإلكتروني">
+                <input type="email"  name="email" placeholder="البريد الإلكتروني">
                 <i class="fa-solid fa-user"></i>
+                @error('email')
+                    <p>{{$message}}</p>
+                @enderror
             </div>
 
             <div class="input-box">
-                <input type="password" placeholder="كلمة السر">
+                <input type="password" name="password" placeholder="كلمة السر">
                 <i class="fa-solid fa-lock"></i>
+                @error('password')
+                    <p>{{$message}}</p>
+                @enderror
             </div>
 
             <div class="remember-forget">
