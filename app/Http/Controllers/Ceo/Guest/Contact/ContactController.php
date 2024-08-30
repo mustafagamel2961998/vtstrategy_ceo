@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Ceo\Guest\Contact;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Guest\Contact\ContactRequest;
+use App\Models\Contact;
 use Illuminate\Http\Request;
 use PhpParser\Node\Stmt\Return_;
 
@@ -27,9 +29,11 @@ class ContactController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(ContactRequest $request)
     {
-        //
+    
+        $store = Contact::create($request->all());
+        return redirect()->route('home.view')->with('success','تم إرسال رسالتك بنجاح');
     }
 
     /**

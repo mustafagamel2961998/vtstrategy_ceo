@@ -31,7 +31,7 @@ return new class extends Migration
             $table->date('start_subscription')->nullable();
             $table->date('end_subscription')->nullable();
             $table->string('otp')->unique();
-            $table->string('politics_status',[0,1])->default(0);
+            $table->enum('politics_status',[0,1])->default(0);
             $table->enum('status',['active','archived'])->default('archived');
             $table->timestamps();
             
