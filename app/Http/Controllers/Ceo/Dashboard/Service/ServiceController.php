@@ -1,19 +1,20 @@
 <?php
 
-namespace App\Http\Controllers\Dashboard\Contact;
+namespace App\Http\Controllers\Ceo\Dashboard\Service;
 
 use App\Http\Controllers\Controller;
-use App\Models\Contact;
+use App\Http\Requests\Ceo\Web\Dashboard\Service\ServiceRequest;
+use App\Models\Ceo\Service;
 use Illuminate\Http\Request;
 
-class ContactController extends Controller
+class ServiceController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $contacts = Contact::latest()->get();
+        $services = Service::with('media')->latest()->get();
         // return view()
     }
 
@@ -28,9 +29,10 @@ class ContactController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(ServiceRequest $request)
     {
-        //
+        $store = Service::create($request->all());
+        // return redirect()->route()->with('success','تم إضافة الخدمة بنجاح');
     }
 
     /**
@@ -52,13 +54,14 @@ class ContactController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(ServiceRequest $request, string $id)
     {
-        $update = Contact::find($id);
-        $update->update([
-            'status'=>'readed'
-        ]);
-        // return redirect()->round()->with('success','تم تعديل حالة الرساله بنجاح');
+
+        $service = Service::find($id);
+        $service->update($request->all());
+                
+        // return redirect()->route()->with('success','تم تعديل الخدمة بنجاح');
+
     }
 
     /**
@@ -66,9 +69,10 @@ class ContactController extends Controller
      */
     public function destroy(string $id)
     {
-        $delete = Contact::find($id);
+        $delete = Service::find($id);
         $delete->delete();
-        // return redirect()->round()->with('success','تم حذف الرساله بنجاح');
+
+        // return redirect()->route()->with('success','تم حذف الخدمة بنجاح');
 
     }
 }

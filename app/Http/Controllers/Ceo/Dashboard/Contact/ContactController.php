@@ -1,20 +1,19 @@
 <?php
 
-namespace App\Http\Controllers\Dashboard\Service;
+namespace App\Http\Controllers\Ceo\Dashboard\Contact;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Ceo\Web\Dashboard\Service\ServiceRequest;
-use App\Models\Ceo\Service;
+use App\Models\Contact;
 use Illuminate\Http\Request;
 
-class ServiceController extends Controller
+class ContactController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $services = Service::with('media')->latest()->get();
+        $contacts = Contact::latest()->get();
         // return view()
     }
 
@@ -29,10 +28,9 @@ class ServiceController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(ServiceRequest $request)
+    public function store(Request $request)
     {
-        $store = Service::create($request->all());
-        // return redirect()->route()->with('success','تم إضافة الخدمة بنجاح');
+        //
     }
 
     /**
@@ -54,14 +52,13 @@ class ServiceController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(ServiceRequest $request, string $id)
+    public function update(Request $request, string $id)
     {
-
-        $service = Service::find($id);
-        $service->update($request->all());
-                
-        // return redirect()->route()->with('success','تم تعديل الخدمة بنجاح');
-
+        $update = Contact::find($id);
+        $update->update([
+            'status'=>'readed'
+        ]);
+        // return redirect()->round()->with('success','تم تعديل حالة الرساله بنجاح');
     }
 
     /**
@@ -69,10 +66,9 @@ class ServiceController extends Controller
      */
     public function destroy(string $id)
     {
-        $delete = Service::find($id);
+        $delete = Contact::find($id);
         $delete->delete();
-
-        // return redirect()->route()->with('success','تم حذف الخدمة بنجاح');
+        // return redirect()->round()->with('success','تم حذف الرساله بنجاح');
 
     }
 }

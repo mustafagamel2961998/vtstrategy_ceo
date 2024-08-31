@@ -1,6 +1,6 @@
 <?php
 
-
+use App\Http\Controllers\Ceo\Dashboard\Home\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,3 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// home
+Route::prefix('dashboard')->group(function(){
+    Route::resource('homes',HomeController::class);
+});
