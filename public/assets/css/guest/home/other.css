@@ -21,3 +21,13 @@
     -ms-transform: translateX(-50%);
     -o-transform: translateX(-50%);
 }
+.artic p.h5{
+    color: #B77C44;
+}
+.artic .artic-img{
+    height: 300px;
+    width: 500px;
+    display: block;
+    margin: auto;
+    object-fit: cover;
+}

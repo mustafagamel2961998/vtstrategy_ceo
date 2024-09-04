@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('articles', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('category_id')
-                  ->constrained('categories')
-                  ->cascadeOnDelete();
+            // $table->foreignId('category_id')
+            //       ->constrained('categories')
+            //       ->cascadeOnDelete();
             $table->string('title');
             $table->text('content');        
             $table->enum('status',['active','archived'])->default('active');          

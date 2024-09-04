@@ -1,4 +1,4 @@
-<x-Guest.Layout.Layout title="حجز استشارة">
+<x-Guest.Layout.Layout title="المقالات">
 
     @push('style')
     <link rel="stylesheet" href="{{asset('assets/css/guest/home/owl.carousel.min.css')}}">

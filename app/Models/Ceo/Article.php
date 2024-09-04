@@ -13,7 +13,7 @@ class Article extends Model implements HasMedia
     use HasFactory,InteractsWithMedia;
 
     protected $fillable = [
-       'category_id',
+    //    'category_id',
        'title',
        'content',
        'status'
@@ -21,9 +21,9 @@ class Article extends Model implements HasMedia
 
 
     //start relationship
-        public function category(){
-            return $this->belongsTo(Category::class,'category_id','id');
-        }
+        // public function category(){
+        //     return $this->belongsTo(Category::class,'category_id','id');
+        // }
     //end relationship
 
 

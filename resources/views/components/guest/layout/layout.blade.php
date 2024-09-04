@@ -12,8 +12,8 @@
     <!-- link main style -->
     <link rel="stylesheet" href="{{asset('assets/css/guest/home/main.css')}}">
     @stack('style')
-    <!-- <title>{{$title}}</title> -->
-    <title>رؤية للإستشارات الإستراتيجية والحوكمة</title>
+    <title>{{$title}}</title>
+    <!-- <title>رؤية للإستشارات الإستراتيجية والحوكمة</title> -->
     <link rel="icon" href="{{asset('assets/images/icon.png')}}">
 
 </head>
@@ -137,11 +137,11 @@
                 </div>
                 <div class="col-sm-6 col-xl-2">
                     <div class="footer-widget mb-4">
-                        <h2 class="heading-2">السياسات والقوانين</h2>
+                        <h2 class="heading-2 ">السياسات والقوانين</h2>
                         <ul class="list-unstyled">
-                            <li><a href="#"><span class="fa fa-chevron-left me-2"></span>السياسة والخصوصية</a></li>
-                            <li><a href="#"><span class="fa fa-chevron-left me-2"></span>الشروط والأحكام</a></li>
-                            <li><a href="#"><span class="fa fa-chevron-left me-2"></span>سياسة الإسترجاع</a></li>
+                            <li><a href="{{ url('/policyandprivacy') }}"><span class="fa fa-chevron-left me-2"></span>السياسة والخصوصية</a></li>
+                            <li><a href="{{ url('/termsandconditions') }}"><span class="fa fa-chevron-left me-2"></span>الشروط والأحكام</a></li>
+                            <li><a href="{{ url('/returnpolicy') }}"><span class="fa fa-chevron-left me-2"></span>سياسة الإسترجاع</a></li>
                         </ul>
                     </div>
                 </div>

@@ -15,6 +15,7 @@ class ArticleController extends Controller
     public function index()
     {
         $articles = Article::where('status','active')->with('category','media')->latest()->paginate(10);
+        return view('Dashboard.Article.index');
     }
 
     /**
@@ -22,7 +23,7 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        //
+        return view('Dashboard.Article.create');
     }
 
     /**
@@ -55,7 +56,7 @@ class ArticleController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        return view('Dashboard.Article.edit');
     }
 
     /**

@@ -1,4 +1,4 @@
-<x-Guest.Layout.Layout title="الرئيسية">
+<x-Guest.Layout.Layout title="رؤية لللإستشارات والحوكمة">
 
     @push('style')
     <link rel="stylesheet" href="{{asset('assets/css/guest/home/owl.carousel.min.css')}}">
@@ -27,7 +27,8 @@
                     </div>
                 </div>
                 <div class="d-none d-md-flex col-md-4 align-items-center justify-content-center">
-                    <a href="{{ url('/bookconsaltation') }}" class="bubble-icon cursor-pointer d-flex align-items-center justify-content-center">
+                    <a href="{{ url('/bookconsaltation') }}"
+                        class="bubble-icon cursor-pointer d-flex align-items-center justify-content-center">
                         <i class="fa-solid fa-gavel fa-2xl"></i>
                         <span class="tooltip">حجز استشارة</span>
                     </a>
@@ -90,7 +91,8 @@
                             <i class="fa-solid fa-display fa-2xl"></i>
                             <span class="tooltip">إنشاء موقعك الان</span>
                         </a>
-                        <a href="{{ url('/bookconsaltation') }}" class="bubble-icon cursor-pointer d-flex align-items-center justify-content-center">
+                        <a href="{{ url('/bookconsaltation') }}"
+                            class="bubble-icon cursor-pointer d-flex align-items-center justify-content-center">
                             <i class="fa-solid fa-calendar-days fa-2xl"></i>
                             <span class="tooltip">احجز استشارة</span>
                         </a>
@@ -98,8 +100,10 @@
                 </div>
                 <div class="col-md-7 about-info">
                     <div class="back-warpper">
-                        <img src="{{asset('assets/images/back-icons/dot-arrow.png')}}" class="back-ico-lg top-left shake-horizontal" alt="">
-                        <img src="{{asset('assets/images/back-icons/blur.png')}}" class="back-ico-md bottom-right rotate" alt="">
+                        <img src="{{asset('assets/images/back-icons/dot-arrow.png')}}"
+                            class="back-ico-lg top-left shake-horizontal" alt="">
+                        <img src="{{asset('assets/images/back-icons/blur.png')}}"
+                            class="back-ico-md bottom-right rotate" alt="">
                     </div>
                     <div class="heading">
                         <h2>من نحن</h2>
@@ -204,11 +208,13 @@
                 <h2>الخدمات التي ندعمها</h2>
             </div>
             <div class="row  position-relative">
-            <div class="back-warpper">
-                        <img src="{{asset('assets/images/back-icons/scribble.png')}}" class="back-ico-lg top-left shake-horizontal" alt="">
-                        <img src="{{asset('assets/images/back-icons/dot-arrow.png')}}" class="back-ico-md bottom-right shake-vertical rotate-180" alt="">
-                    
-                    </div>
+                <div class="back-warpper">
+                    <img src="{{asset('assets/images/back-icons/scribble.png')}}"
+                        class="back-ico-lg top-left shake-horizontal" alt="">
+                    <img src="{{asset('assets/images/back-icons/dot-arrow.png')}}"
+                        class="back-ico-md bottom-right shake-vertical rotate-180" alt="">
+
+                </div>
                 <div class="col-xl-4 col-md-6 d-flex align-items-stretch">
                     <div class="law text-center">
                         <div class="icon-wrap">
@@ -314,7 +320,7 @@
     <!-- start counter section -->
     <section id="counter" class="counter mb-5">
         <div class="container position-relative">
-      
+
             <div class="row g-3">
                 <div class="col-md-3 col-sm-6">
                     <div class="single_counter p-4">
@@ -409,53 +415,53 @@
     <!-- start top clients section -->
     <section class="top-clients py-5">
         <div class="heading-section text-center mb-5">
-                <span class="subheading">شركائنـــا</span>
-                <h2>كبار العملاء</h2>
+            <span class="subheading">شركائنـــا</span>
+            <h2>كبار العملاء</h2>
         </div>
         <div class="container">
-        <div class="row g-3">
-        <div class="col-6 col-md-4 col-lg-3 col-xl-2">
-            <div class="logo p-4 h-100 d-flex flex-column align-items-center">
-                <img src="{{asset('assets/images/logos/logo1.png')}}" class="w-100" alt="">
-                <button class="btn light-btn mt-auto">زيارة الموقع</button>
+            <div class="row g-3 ">
+                <div class="col-6 col-md-4 col-lg-3 col-xl-2  align-items-center">
+                    <div class="logo p-4 h-100 d-flex flex-column align-items-center">
+                        <img src="{{asset('assets/images/logos/logo1.png')}}" class="w-100" alt="">
+                        <button class="btn light-btn mt-auto">زيارة الموقع</button>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3 col-xl-2  align-items-center">
+                    <div class="logo p-4 h-100 d-flex flex-column align-items-center">
+                        <img src="{{asset('assets/images/logos/logo2.png')}}" class="w-100" alt="">
+                        <button class="btn light-btn mt-auto">زيارة الموقع</button>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3 col-xl-2  align-items-center">
+                    <div class="logo p-4 h-100 d-flex flex-column align-items-center">
+                        <img src="{{asset('assets/images/logos/logo3.png')}}" class="w-100" alt="">
+                        <button class="btn light-btn mt-auto">زيارة الموقع</button>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3 col-xl-2  align-items-center">
+                    <div class="logo p-4 h-100 d-flex flex-column align-items-center">
+                        <img src="{{asset('assets/images/logos/logo4.png')}}" class="w-100" alt="">
+                        <button class="btn light-btn mt-auto">زيارة الموقع</button>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3 col-xl-2  align-items-center">
+                    <div class="logo p-4 h-100 d-flex flex-column align-items-center">
+                        <img src="{{asset('assets/images/logos/logo1.png')}}" class="w-100" alt="">
+                        <button class="btn light-btn mt-auto">زيارة الموقع</button>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3 col-xl-2  align-items-center">
+                    <div class="logo p-4 h-100 d-flex flex-column align-items-center">
+                        <img src="{{asset('assets/images/logos/logo2.png')}}" class="w-100" alt="">
+                        <button class="btn light-btn mt-auto">زيارة الموقع</button>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="col-6 col-md-4 col-lg-3 col-xl-2">
-            <div class="logo p-4 h-100 d-flex flex-column align-items-center">
-                <img src="{{asset('assets/images/logos/logo2.png')}}" class="w-100" alt="">
-                <button class="btn light-btn mt-auto">زيارة الموقع</button>
-            </div>
-        </div>
-        <div class="col-6 col-md-4 col-lg-3 col-xl-2">
-            <div class="logo p-4 h-100 d-flex flex-column align-items-center">
-                <img src="{{asset('assets/images/logos/logo3.png')}}" class="w-100" alt="">
-                <button class="btn light-btn mt-auto">زيارة الموقع</button>
-            </div>
-        </div>
-        <div class="col-6 col-md-4 col-lg-3 col-xl-2">
-            <div class="logo p-4 h-100 d-flex flex-column align-items-center">
-                <img src="{{asset('assets/images/logos/logo4.png')}}" class="w-100" alt="">
-                <button class="btn light-btn mt-auto">زيارة الموقع</button>
-            </div>
-        </div>
-        <div class="col-6 col-md-4 col-lg-3 col-xl-2">
-            <div class="logo p-4 h-100 d-flex flex-column align-items-center">
-                <img src="{{asset('assets/images/logos/logo1.png')}}" class="w-100" alt="">
-                <button class="btn light-btn mt-auto">زيارة الموقع</button>
-            </div>
-        </div>
-        <div class="col-6 col-md-4 col-lg-3 col-xl-2">
-            <div class="logo p-4 h-100 d-flex flex-column align-items-center">
-                <img src="{{asset('assets/images/logos/logo2.png')}}" class="w-100" alt="">
-                <button class="btn light-btn mt-auto">زيارة الموقع</button>
-            </div>
-        </div>
-    </div>
         </div>
     </section>
-     <!-- end top clients section -->
-    
-     <!-- start last articales section -->
+    <!-- end top clients section -->
+
+    <!-- start last articales section -->
     <section class="last-articals sec-padding sec-back">
         <div class="container overflow-hidden  position-relative">
             <div class="heading-section text-center mb-5">
@@ -463,11 +469,13 @@
                 <h2>المقالات المضافة حديثاً</h2>
             </div>
             <div class="back-warpper">
-                        <img src="{{asset('assets/images/back-icons/scribble.png')}}" class="back-ico-lg top-left shake-horizontal" alt="">
-                        <img src="{{asset('assets/images/back-icons/dot-arrow.png')}}" class="back-ico-md bottom-right rotate-180 shake-vertical " alt="">
-                    </div>
+                <img src="{{asset('assets/images/back-icons/scribble.png')}}"
+                    class="back-ico-lg top-left shake-horizontal" alt="">
+                <img src="{{asset('assets/images/back-icons/dot-arrow.png')}}"
+                    class="back-ico-md bottom-right rotate-180 shake-vertical " alt="">
+            </div>
             <div class="row g-4">
-           
+
                 <!-- اعرض اخر 6 مقالات -->
                 <!-- articale card -->
                 <div class="col-12 col-xl-4 col-md-6">
@@ -786,7 +794,7 @@
 
     <!-- start faq section -->
     <section class="faq sec-padding">
-    
+
         <div class="container">
             <div class="heading-section text-center mb-5">
                 <span class="subheading">الأسئلة</span>
@@ -1081,7 +1089,7 @@
             </div>
             <div class="row g-md-5 align-items-center">
                 <div class="col-lg-7">
-                <form action="" class="container">
+                    <form action="" class="container">
                         <div class="row g-4">
                             <div class="col-md-6">
                                 <input type="text" class="form-control" placeholder="الأسم">
@@ -1096,25 +1104,27 @@
                                 <input type="tel" class="form-control" placeholder="رقم واتساب">
                             </div>
                             <div class="col-md-12">
-                            <input type="text" class="form-control" placeholder="عنوان الرسالة">
+                                <input type="text" class="form-control" placeholder="عنوان الرسالة">
                             </div>
                             <div class="col-12">
                                 <textarea name="" class="form-control" id="" placeholder="الرسالة"></textarea>
 
                             </div>
                             <div class="col-12">
-                                <button class="btn main-btn w-100 d-flex align-items-center justify-content-center"><i class="fa-solid fa-envelope me-2"></i> ارسال الرسالة</button>
+                                <button class="btn main-btn w-100 d-flex align-items-center justify-content-center"><i
+                                        class="fa-solid fa-envelope me-2"></i> ارسال الرسالة</button>
                             </div>
                         </div>
 
                     </form>
                 </div>
                 <div class="col-lg-5">
-                <h5>تواصل معنا</h5>
-                    <p class="main-p">يمكنك ترك مقترحاتك او اى استفسار او تواصل معنا عن طريق احد طرق التواصل المتاحة نحن سعداء دائما بمساعدتكم.</p>
+                    <h5>تواصل معنا</h5>
+                    <p class="main-p">يمكنك ترك مقترحاتك او اى استفسار او تواصل معنا عن طريق احد طرق التواصل المتاحة نحن
+                        سعداء دائما بمساعدتكم.</p>
                     <div class="info">
                         <div class="icon">
-                        <i class="fa-solid fa-location-dot"></i>
+                            <i class="fa-solid fa-location-dot"></i>
                         </div>
                         <div>
                             <h4>العنوان</h4>
@@ -1123,7 +1133,7 @@
                     </div>
                     <div class="info">
                         <div class="icon">
-                        <i class="fa-solid fa-envelope-open-text"></i>
+                            <i class="fa-solid fa-envelope-open-text"></i>
                         </div>
                         <div>
                             <h4>البريد الإلكتروني</h4>
@@ -1132,7 +1142,7 @@
                     </div>
                     <div class="info">
                         <div class="icon">
-                        <i class="fa-solid fa-phone-volume"></i>
+                            <i class="fa-solid fa-phone-volume"></i>
                         </div>
                         <div>
                             <h4>رقم الجوال</h4>
@@ -1141,11 +1151,11 @@
                     </div>
                     <div class="info">
                         <div class="icon">
-                        <i class="fa-brands fa-whatsapp"></i>
+                            <i class="fa-brands fa-whatsapp"></i>
                         </div>
                         <div>
                             <h4>الواتساب</h4>
-                            <p><a href=""  dir="ltr">974 257 336</a></p>
+                            <p><a href="" dir="ltr">974 257 336</a></p>
                         </div>
                     </div>
                 </div>

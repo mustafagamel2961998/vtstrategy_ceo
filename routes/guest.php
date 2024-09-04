@@ -63,3 +63,18 @@ Route::get('/OTP', function () {
 Route::get('/resetPassword', function () {
     return view('Guest.auth.resetPassword');
 })->name('resetPassword');
+
+
+
+
+Route::get('/policyandprivacy', function () {
+    return view('Guest.policies.index');
+})->name('policyandprivacy');
+
+Route::get('/termsandconditions', function () {
+    return view('Guest.terms.index');
+})->name('termsandconditions');
+
+Route::get('/returnpolicy', function () {
+    return view('Guest.return.index');
+})->name('returnpolicy');

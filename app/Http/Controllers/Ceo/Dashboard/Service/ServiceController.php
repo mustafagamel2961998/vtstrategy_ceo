@@ -15,7 +15,7 @@ class ServiceController extends Controller
     public function index()
     {
         $services = Service::with('media')->latest()->get();
-        // return view()
+        return view('Dashboard.Service.index');
     }
 
     /**
@@ -23,7 +23,7 @@ class ServiceController extends Controller
      */
     public function create()
     {
-        //
+        return view('Dashboard.Service.create');
     }
 
     /**
@@ -48,7 +48,8 @@ class ServiceController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        return view('Dashboard.Service.edit');
+        
     }
 
     /**

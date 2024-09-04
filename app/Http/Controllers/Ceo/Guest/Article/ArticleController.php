@@ -38,7 +38,7 @@ class ArticleController extends Controller
      */
     public function show(string $id)
     {
-        //
+        return view('Guest.articale.show');
     }
 
     /**

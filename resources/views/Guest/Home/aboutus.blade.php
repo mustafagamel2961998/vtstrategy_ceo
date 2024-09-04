@@ -1,4 +1,4 @@
-<x-Guest.Layout.Layout title="حجز استشارة">
+<x-Guest.Layout.Layout title="من نحن">
 
     @push('style')
     <link rel="stylesheet" href="{{asset('assets/css/guest/home/owl.carousel.min.css')}}">
@@ -207,7 +207,7 @@
                 <span class="subheading">الخبرات</span>
                 <h2>الخدمات التي ندعمها</h2>
             </div>
-            <div class="row  position-relative">
+        <div class="row  position-relative">
             <div class="back-warpper">
                         <img src="{{asset('assets/images/back-icons/scribble.png')}}" class="back-ico-lg top-left shake-horizontal" alt="">
                         <img src="{{asset('assets/images/back-icons/dot-arrow.png')}}" class="back-ico-md bottom-right shake-vertical rotate-180" alt="">

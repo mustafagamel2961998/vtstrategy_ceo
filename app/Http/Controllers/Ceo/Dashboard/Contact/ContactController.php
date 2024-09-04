@@ -14,9 +14,8 @@ class ContactController extends Controller
     public function index()
     {
         $contacts = Contact::latest()->get();
-        // return view()
+        return view('Dashboard.Contact.index');
     }
-
     /**
      * Show the form for creating a new resource.
      */
