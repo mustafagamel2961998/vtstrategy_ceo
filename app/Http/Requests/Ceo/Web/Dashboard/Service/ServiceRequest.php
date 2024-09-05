@@ -9,6 +9,18 @@ class ServiceRequest extends FormRequest
     /**
      * Determine if the user is authorized to make this request.
      */
+    public function prepareForValidation()
+    {
+        if($this->status){
+            $status = 'active';
+        } else{
+            $status = 'archived';
+        }
+
+        $this->merge([
+            'status'=>$status,
+        ]);
+    }
     public function authorize(): bool
     {
         return true;
@@ -22,11 +34,11 @@ class ServiceRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'big_icon_class'=>['nullable','string'],
+            'small_icon_class'=>['nullable','string'],
             'title'=>['required','string'],
             'content'=>['required','string'],
-            'status'=>['required','in:pending,readed'],
-            'big_icon'=>['required','mimes:png,jpg,jpeg,svg'],
-            'small_icon'=>['required','mimes:png,jpg,jpeg,svg']
+            'status'=>['required','in:active,archived'],
         ];
     }
 }

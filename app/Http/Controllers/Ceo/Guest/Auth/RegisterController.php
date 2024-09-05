@@ -90,24 +90,26 @@ class RegisterController extends Controller
            Config::set('database.connections.mysql.database', $databaseProducationNameLowercase);
            DB::connection('mysql')->reconnect();
            DB::setDefaultConnection('mysql');
-           
-            // set admin from reques
-           Admin::create([
-            'first_name'=>$request->namespace,
-            'last_name'=>null,
-            'email'=>$request->email,
-            'password'=>Hash::make($request->password),
-            'phone'=>$request->mobile,
-            'status'=>'super_admin',
-           ]); 
-
+        
 
            // Run migrations for the tenant
            Artisan::call('migrate', [
                '--force' => true, // Force the migration to run without confirmation
            ]);
-           Artisan::call('db:seed');
-           
+           Artisan::call('db:seed',[
+            '--class' => 'TenantDefaultInformation'
+           ]);
+              
+            // set admin from reques
+           Admin::create([
+                'first_name'=>$request->name,
+                'last_name'=>null,
+                'email'=>$request->email,
+                'password'=>Hash::make($request->password),
+                'phone'=>$request->mobile,
+                'status'=>'super_admin',
+           ]); 
+
            return true;
    }
 }

@@ -5,6 +5,7 @@
         <div class="dash-card">
             <h5>الإشتراكات الجديدة</h5>
             <div>
+                {{$tenantsThisYearGroupByMonthes}}
                 <canvas id="newRegister"></canvas>
             </div>
         </div>
@@ -26,6 +27,7 @@
             <h5>الزيارات</h5>
             <p>هذا الشهر</p>
             <div>
+                {{$visitThisMounthGroupByWeekly}}
                 <canvas id="visits"></canvas>
             </div>
         </div>
@@ -34,6 +36,7 @@
         <div class="dash-card">
             <h5>حجز استشارة</h5>
             <div>
+                {{$consaltationThisYearGroupByMonthes}}
                 <canvas id="bookConsaltation"></canvas>
             </div>
         </div>

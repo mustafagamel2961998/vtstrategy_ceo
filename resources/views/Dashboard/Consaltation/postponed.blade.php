@@ -14,22 +14,39 @@
                             <th>البريد الإلكتروني</th>
                             <th>رقم الهاتف</th>
                             <th>القسم الخاص</th>
-                            <th>تمت بنجاح</th>
+                            {{-- <th>تمت بنجاح</th> --}}
                             <th>حذف</th>
                         </tr>
                     </thead>
                     <tbody>
+                        @forelse ($PostponedConsaltations as $key=> $PostponedConsaltation)
                         <tr class="row-table">
-                            <td>1</td>
-                            <td>مصطفى</td>
-                            <td>mostafa@yahoo.com</td>
-                            <td>01064792335</td>
-                            <td>القانون الإداري</td>
-                            <td><button class="btn btn-sm btn-outline-success d-flex align-items-center m-auto"><i
-                                        class="fa-solid fa-check-double"></i></button></td>
-                            <td><button class="btn btn-sm btn-outline-danger d-flex align-items-center m-auto"><i
-                                        class="fa-solid fa-trash"></i></button></td>
+                            <td>{{$key+1}}</td>
+                            <td>{{$PostponedConsaltation->name}}</td>
+                            <td>{{$PostponedConsaltation->email}}</td>
+                            <td>{{$PostponedConsaltation->phone}}</td>
+                            <td> {{$PostponedConsaltation->service->title}}</td>
+                            {{-- <td>
+                                <button class="btn btn-sm btn-outline-success d-flex align-items-center m-auto">
+                                    <i class="fa-solid fa-check-double"></i>
+                                </button>
+                            </td> --}}
+                            <td>
+                                <form action="{{route('consaltaions.destroy',$PostponedConsaltation->id)}}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button class="btn btn-sm btn-outline-danger d-flex align-items-center m-auto">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </button>
+                                </form>
+                             </td>
                         </tr>
+                        @empty
+                            <tr>
+                                <td colspan="7">xلا يوجد بيانات</td>
+                            </tr>
+                        @endforelse
+                        
 
                     </tbody>
                 </table>

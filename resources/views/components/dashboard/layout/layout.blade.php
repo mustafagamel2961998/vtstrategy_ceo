@@ -38,8 +38,8 @@
                 <li class="{{ Request::is('dashboard/services*') ? 'active' : '' }}">
                     <a href="{{ route('services.index') }}"><i class="fa-solid fa-list-ol"></i>الخدمات والمعلومات</a>
                 </li>
-                <li class="{{ Request::is('dashboard/consaltaion*') ? 'active' : '' }}">
-                    <a href="{{ route('consaltaion') }}"><i class="fa-solid fa-calendar-check"></i>استشارات محجوزة</a>
+                <li class="{{ Request::is('dashboard/consaltaions*') ? 'active' : '' }}">
+                    <a href="{{ route('consaltaions.index') }}"><i class="fa-solid fa-calendar-check"></i>استشارات محجوزة</a>
                 </li>
                 <li class="{{ Request::is('dashboard/messages*') ? 'active' : '' }}">
                     <a href="{{ route('messages.index') }}"><i class="fa-solid fa-comments"></i>الرسائل</a>
@@ -90,7 +90,13 @@
         </div>
 
         <section id="content-wrapper">
+          
             <div class="row g-3">
+                @if (Session::has('success'))
+                  <div class="alert alert-success">
+                    {{Session::get('success')}}
+                  </div>
+                @endif
                 {{$slot}}
             </div>
         </section>

@@ -90,45 +90,84 @@
                     </div>
                 </div>
                 <div class="col-lg-8">
-                    <form action="" class="container">
+                    <form action="{{route('bookingconsaltaions.store')}}" method="POST" class="container">
+                        @csrf
+                    
+
                         <h3 class="mb-3">حجز استشارة</h3>
                         <div class="row g-4">
                             <div class="col-md-6">
-                                <input type="text" class="form-control" placeholder="الأسم">
+                                <input type="text" name="name" class="form-control" placeholder="الأسم" value="{{old('name')}}">
+                                @error('name')
+                                    <div class="alert alert-danger">
+                                        {{$message}}
+                                    </div>
+                                @enderror
                             </div>
                             <div class="col-md-6">
-                                <input type="email" class="form-control" placeholder="البريد الإلكتروني">
+                                <input type="email" name="email" class="form-control" placeholder="البريد الإلكتروني" value="{{old('email')}}">
+                                @error('email')
+                                    <div class="alert alert-danger">
+                                        {{$message}}
+                                    </div>
+                                @enderror
+                                
                             </div>
                             <div class="col-md-6">
-                                <input type="tel" class="form-control" placeholder="رقم الهاتف">
+                                <input type="text" name="phone" class="form-control" placeholder="رقم الهاتف" value="{{old('phone')}}">
+                                @error('phone')
+                                    <div class="alert alert-danger">
+                                        {{$message}}
+                                    </div>
+                                @enderror
+                            
                             </div>
                             <div class="col-md-6">
-                                <input type="tel" class="form-control" placeholder="رقم واتساب">
+                                <input type="text" name="whatsapp" class="form-control"  placeholder="رقم واتساب" value="{{old('whatsapp')}}">
+                                @error('whatsapp')
+                                    <div class="alert alert-danger">
+                                        {{$message}}
+                                    </div>
+                                @enderror
                             </div>
 
                             <div class="col-md-6">
-                                <select name="" id="" class="form-control">
-                                    <option value="قسم غير محدد">القسم الخاص بالاستشارة</option>
-                                    <option value="القانون التجاري">القانون التجاري</option>
-                                    <option value="القانون المدني">القانون المدني</option>
-                                    <option value="القانون الجنائي">القانون الجنائي</option>
-                                    <option value="القانون الأسري">القانون الأسري</option>
-                                    <option value="القانون الإداري">القانون الإداري</option>
-                                    <option value="القانون العقاري">القانون العقاري</option>
-                                    <option value="غير محدد">غير ذلك</option>
+                                <select name="service_id" id="service_id" class="form-control">
+                                    <option disabled>القسم الخاص بالاستشارة</option>
+                                    @foreach ($services as $service)
+                                        <option value="{{$service->id}}" @if(old('service_id') == $service->id)  checked @endif> 
+                                            {{$service->title}}
+                                        </option>
+                                    @endforeach
+                                  
+                                    <option value="">غير ذلك</option>
                                 </select>
+                                @error('service_id')
+                                    <div class="alert alert-danger">
+                                        {{$message}}
+                                    </div>
+                                @enderror
                             </div>
                             <div class="col-md-6">
-                                <select name="" id="" class="form-control">
-                                    <option value="غير محدد">موعد الإستشارة</option>
-                                    <option value="24/10/2024 03:00pm" data-text="24/10/2024 - 03:00 pm">24/10/2024 -
-                                        03:00 pm</option>
+                                <select name="date_time" id="date_time" class="form-control" dir="ltr">
+                                    <option value="غير محدد" disabled>موعد الإستشارة</option>
+                                    
+                                    <option value="2024-09-05 10:23" data-text="2024-09-05 10:23">2024-10-24 03:00</option>
 
                                 </select>
+                                @error('date_time')
+                                    <div class="alert alert-danger">
+                                        {{$message}}
+                                    </div>
+                                @enderror
                             </div>
                             <div class="col-12">
-                                <textarea name="" class="form-control" id="" placeholder="ملاحظات"></textarea>
-
+                                <textarea name="note" class="form-control" id="" placeholder="ملاحظات">{{old('note')}}</textarea>
+                                @error('note')
+                                    <div class="alert alert-danger">
+                                        {{$message}}
+                                    </div>
+                                @enderror
                             </div>
                             <div class="col-12">
                                 <button class="btn main-btn w-100"><i class="fa-solid fa-calendar-days"></i> حجز

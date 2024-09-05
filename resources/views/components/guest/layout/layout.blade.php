@@ -71,7 +71,7 @@
                         <a href="{{route('articals.index')}}" class="nav-link">المقالات</a>
                     </li>
                     <li class="nav-item {{ request()->is('bookconsaltation') ? 'active' : '' }}">
-                        <a href="{{ url('/bookconsaltation') }}" class="nav-link">حجز استشارة</a>
+                        <a href="{{ route('bookingconsaltaions.index') }}" class="nav-link">حجز استشارة</a>
                     </li>
                     <li class="nav-item {{ request()->is('contact') ? 'active' : '' }}">
                         <a href="{{ route('contacts.index') }}" class="nav-link">التواصل</a>

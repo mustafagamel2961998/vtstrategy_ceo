@@ -13,9 +13,12 @@ return new class extends Migration
     {
         Schema::create('services', function (Blueprint $table) {
             $table->id();
+            $table->string('big_icon_class')->nullable();
+            $table->string('small_icon_class')->nullable();
+
             $table->string('title');
             $table->text('content');
-            $table->enum('status',['pending','readed'])->default('pending');          
+            $table->enum('status',['active','archived'])->default('active');          
             $table->timestamps();
         });
     }

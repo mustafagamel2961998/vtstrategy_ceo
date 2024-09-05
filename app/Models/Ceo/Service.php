@@ -12,16 +12,18 @@ class Service extends Model implements HasMedia
 {
     use HasFactory,InteractsWithMedia;
     protected $fillable = [
+        'big_icon_class',
+        'small_icon_class',
         'title',
         'content',
         'status',
     ];
     
-
+  
     
-    public function registerMediaConversions(Media $media = null): void
-    {
-        $this->addMediaCollection('big_icon');
-        $this->addMediaCollection('small_icon');
-    }
+    // public function registerMediaConversions(Media $media = null): void
+    // {
+    //     $this->addMediaCollection('big_icon');
+    //     $this->addMediaCollection('small_icon');
+    // }
 }

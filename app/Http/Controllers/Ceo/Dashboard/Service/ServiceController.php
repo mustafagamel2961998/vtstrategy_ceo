@@ -3,9 +3,13 @@
 namespace App\Http\Controllers\Ceo\Dashboard\Service;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Ceo\Web\Dashboard\Service\CounterOfNumberRequest;
 use App\Http\Requests\Ceo\Web\Dashboard\Service\ServiceRequest;
+use App\Models\Ceo\Counterofnumber;
 use App\Models\Ceo\Service;
+use App\Models\Ceo\Setting;
 use Illuminate\Http\Request;
+use League\Glide\Server;
 
 class ServiceController extends Controller
 {
@@ -14,8 +18,11 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        $services = Service::with('media')->latest()->get();
-        return view('Dashboard.Service.index');
+        $services = Service::latest()->get();
+        $setting = Setting::query()->first();
+        $counterofnumber = Counterofnumber::query()->first();
+
+        return view('Dashboard.Service.index',compact('services','setting','counterofnumber'));
     }
 
     /**
@@ -23,7 +30,8 @@ class ServiceController extends Controller
      */
     public function create()
     {
-        return view('Dashboard.Service.create');
+        $service = new Service();
+        return view('Dashboard.Service.create',compact('service'));
     }
 
     /**
@@ -32,7 +40,7 @@ class ServiceController extends Controller
     public function store(ServiceRequest $request)
     {
         $store = Service::create($request->all());
-        // return redirect()->route()->with('success','تم إضافة الخدمة بنجاح');
+        return redirect()->route('services.index')->with('success','تم إضافة الخدمة بنجاح');
     }
 
     /**
@@ -48,7 +56,8 @@ class ServiceController extends Controller
      */
     public function edit(string $id)
     {
-        return view('Dashboard.Service.edit');
+        $service = Service::find($id);
+        return view('Dashboard.Service.edit',compact('service'));
         
     }
 
@@ -61,7 +70,7 @@ class ServiceController extends Controller
         $service = Service::find($id);
         $service->update($request->all());
                 
-        // return redirect()->route()->with('success','تم تعديل الخدمة بنجاح');
+        return redirect()->route('services.index')->with('success','تم تعديل الخدمة بنجاح');
 
     }
 
@@ -72,8 +81,22 @@ class ServiceController extends Controller
     {
         $delete = Service::find($id);
         $delete->delete();
+        return redirect()->route('services.index')->with('success','تم حذف الخدمة بنجاح');
+    }
 
-        // return redirect()->route()->with('success','تم حذف الخدمة بنجاح');
+    public function counterOfNumbersView(){
+
+        $counterOfNumber = Counterofnumber::query()->first();
+        return view('Dashboard.Service.counter_of_numbers',compact('counterOfNumber'));
+
+    }
+
+    public function counterOfNumbers(CounterOfNumberRequest $request,$id){
+
+        $counterOfNumberUpdate = Counterofnumber::find($id);
+        $counterOfNumberUpdate->update($request->all());
+        return redirect()->route('services.index')->with('success','تم تعديل عداد الخدمات بنجاح');
+
 
     }
 }

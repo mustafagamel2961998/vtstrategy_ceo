@@ -2,8 +2,10 @@
 
 use App\Http\Controllers\Ceo\Dashboard\Home\HomeController;
 use App\Http\Controllers\Ceo\Dashboard\Article\ArticleController;
+use App\Http\Controllers\Ceo\Dashboard\Consaltation\ConsaltationController;
 use App\Http\Controllers\Ceo\Dashboard\Service\ServiceController;
 use App\Http\Controllers\Ceo\Dashboard\Contact\ContactController;
+use App\Http\Controllers\Ceo\Dashboard\Setting\SettingController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,17 +24,6 @@ Route::prefix('dashboard')->group(function(){
     
      
     
-
-
-
-
-// consaltation
-Route::get('consaltaion',function(){
-    return view('Dashboard.Consaltation.index');
-})->name('consaltaion');
-Route::get('consaltaion/postponed',function(){
-    return view('Dashboard.Consaltation.postponed');
-})->name('consaltaion.postponed');
 
 
 
@@ -121,19 +112,51 @@ Route::get('Returnpolicy',function(){
 
 
 // service
-Route::get('services/updatenumbers',function(){
-    return view('Dashboard.Service.updatenumbers');
-})->name('services.updatenumbers');
-Route::get('services/maininfo',function(){
-    return view('Dashboard.Service.maininfo');
-})->name('services.maininfo');
+// Route::get('services/updatenumbers',function(){
+//     return view('Dashboard.Service.updatenumbers');
+// })->name('services.updatenumbers');
+
+// Route::get('services/maininfo',function(){
+//     return view('Dashboard.Service.maininfo');
+// })->name('services.maininfo');
 
 
 
 
 
 Route::resource('homes',HomeController::class);
+//*******************************************************************************************/
 Route::resource('messages', ContactController::class); /// == contacts 
+//*******************************************************************************************/
+Route::get('services/update/counter/of/numbers',[ServiceController::class,'counterOfNumbersView'])
+       ->name('services.update.counter.of.numbers.view');
+Route::put('services/update/counter/of/numbers/{id}',[ServiceController::class,'counterOfNumbers'])
+       ->name('services.update.counter.of.numbers');
 Route::resource('services', ServiceController::class); 
+//*******************************************************************************************/
+Route::resource('settings',SettingController::class);
+//*******************************************************************************************/
 Route::resource('articles', ArticleController::class);   
+//*******************************************************************************************/
+Route::get('consaltaions/postponed',[ConsaltationController::class,'consaltaionPostponedView'])
+        ->name('consaltaions.postponed.view');
+Route::put('consaltaions/postponed/{id}',[ConsaltationController::class,'consaltaionPostponed'])
+        ->name('consaltaions.postponed');
+        
+Route::resource('consaltaions',ConsaltationController::class);
+//*******************************************************************************************/
+
 });
+
+
+
+
+// consaltation
+// Route::get('consaltaion',function(){
+//     return view('Dashboard.Consaltation.index');
+// })->name('consaltaion');
+// Route::get('consaltaion/postponed',function(){
+//     return view('Dashboard.Consaltation.postponed');
+// })->name('consaltaion.postponed');
+
+

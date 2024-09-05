@@ -3,6 +3,7 @@
 use App\Http\Controllers\Ceo\Guest\Article\ArticleController;
 use App\Http\Controllers\Ceo\Guest\Auth\LoginController;
 use App\Http\Controllers\Ceo\Guest\Auth\RegisterController;
+use App\Http\Controllers\Ceo\Guest\ConsaltationController;
 use App\Http\Controllers\Ceo\Guest\Contact\ContactController;
 use App\Http\Controllers\Ceo\Guest\Home\HomeController;
 use Illuminate\Support\Facades\Route;
@@ -18,16 +19,28 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
+Route::group(['middleware'=>'visit'],function(){
+    
 // Guest Route
 Route::get('login',[LoginController::class,'login'])->name('login.view');
 Route::post('login/method',[LoginController::class,'loginMethod'])->name('login.method');
+//****************************************************************************************/
 Route::get('register',[RegisterController::class,'register'])->name('register.view');
 Route::post('register/store',[RegisterController::class,'registerStore'])->name('register.store');
+//****************************************************************************************/
 Route::get('/',[HomeController::class,'index'])->name('home.view');
-
+//****************************************************************************************/
 Route::resource('articals',ArticleController::class);
+//****************************************************************************************/
 Route::resource('contacts',ContactController::class);
+//****************************************************************************************/
+Route::resource('bookingconsaltaions',ConsaltationController::class);
+//****************************************************************************************/
+
+
+
+
+
 // Route::get('/', function () {
 //     return view('Guest.Home.index');
 // });
@@ -78,3 +91,5 @@ Route::get('/termsandconditions', function () {
 Route::get('/returnpolicy', function () {
     return view('Guest.return.index');
 })->name('returnpolicy');
+
+});
