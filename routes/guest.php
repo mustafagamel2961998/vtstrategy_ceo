@@ -3,7 +3,7 @@
 use App\Http\Controllers\Ceo\Guest\Article\ArticleController;
 use App\Http\Controllers\Ceo\Guest\Auth\LoginController;
 use App\Http\Controllers\Ceo\Guest\Auth\RegisterController;
-use App\Http\Controllers\Ceo\Guest\ConsaltationController;
+use App\Http\Controllers\Ceo\Guest\Consaltation\ConsaltationController;
 use App\Http\Controllers\Ceo\Guest\Contact\ContactController;
 use App\Http\Controllers\Ceo\Guest\Home\HomeController;
 use Illuminate\Support\Facades\Route;
@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::group(['middleware'=>'visit'],function(){
+Route::group(['middleware'=>'visit','as'=>'guest.'],function(){
     
 // Guest Route
 Route::get('login',[LoginController::class,'login'])->name('login.view');

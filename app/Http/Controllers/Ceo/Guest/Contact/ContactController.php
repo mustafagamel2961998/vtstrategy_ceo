@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Ceo\Guest\Contact;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Guest\Contact\ContactRequest;
+use App\Http\Requests\Ceo\Web\Guest\Contact\ContactRequest;
 use App\Models\Contact;
 use Illuminate\Http\Request;
 use PhpParser\Node\Stmt\Return_;

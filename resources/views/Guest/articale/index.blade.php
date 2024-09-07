@@ -30,7 +30,7 @@
 
                 </div>
                 <div class="d-none d-md-flex col-md-4 align-items-center justify-content-center">
-                    <a href="{{ url('/bookconsaltation') }}"
+                    <a href="{{route('guest.bookingconsaltaions.index')}}"
                         class="bubble-icon cursor-pointer d-flex align-items-center justify-content-center">
                         <i class="fa-solid fa-gavel fa-2xl"></i>
                         <span class="tooltip">حجز استشارة</span>

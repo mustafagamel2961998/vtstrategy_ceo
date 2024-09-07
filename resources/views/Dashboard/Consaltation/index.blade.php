@@ -33,7 +33,7 @@
                             <td>{{$consaltation->email}}</td>
                             <td>{{$consaltation->phone}}</td>
                             <td>{{$consaltation->whatsapp}}</td>
-                            <td>{{$consaltation->service->title}}</td>
+                            <td>{{$consaltation->service->title ?? 'غير محدد'}}</td>
                             <td>
                                 {{$consaltation->date_time->format('Y-m-d H:i a')}}
                             </td>

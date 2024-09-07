@@ -5,6 +5,8 @@ use App\Http\Controllers\Ceo\Dashboard\Article\ArticleController;
 use App\Http\Controllers\Ceo\Dashboard\Consaltation\ConsaltationController;
 use App\Http\Controllers\Ceo\Dashboard\Service\ServiceController;
 use App\Http\Controllers\Ceo\Dashboard\Contact\ContactController;
+use App\Http\Controllers\Ceo\Dashboard\Datetime\DateTimeController;
+use App\Http\Controllers\Ceo\Dashboard\Policy\PolicyController;
 use App\Http\Controllers\Ceo\Dashboard\Setting\SettingController;
 use Illuminate\Support\Facades\Route;
 
@@ -30,9 +32,9 @@ Route::prefix('dashboard')->group(function(){
 
 
 // contact
-    Route::get('messages/readed',function(){
-        return view('Dashboard.Contact.readed');
-})->name('messages.readed');
+//     Route::get('messages/readed',function(){
+//         return view('Dashboard.Contact.readed');
+// })->name('messages.readed');
 
 
 
@@ -76,12 +78,12 @@ Route::get('topclient/edit',function(){
 
 
 // add consaltation time
-Route::get('addtime',function(){
-    return view('Dashboard.Addtime.index');
-})->name('addtime');
-Route::get('addtime/create',function(){
-    return view('Dashboard.Addtime.create');
-})->name('addtime.create');
+// Route::get('addtime',function(){
+//     return view('Dashboard.Addtime.index');
+// })->name('addtime');
+// Route::get('addtime/create',function(){
+//     return view('Dashboard.Addtime.create');
+// })->name('addtime.create');
 
 
 // rate
@@ -97,9 +99,9 @@ Route::get('rate/edit',function(){
 
 
 //السياسة والخصوصية
-Route::get('Policyandprivacy',function(){
-    return view('Dashboard.Policy.index');
-})->name('Policyandprivacy');
+// Route::get('Policyandprivacy',function(){
+//     return view('Dashboard.Policy.index');
+// })->name('Policyandprivacy');
 //الشروط والأحكام
 Route::get('TermsandConditions',function(){
     return view('Dashboard.Term.index');
@@ -144,6 +146,13 @@ Route::put('consaltaions/postponed/{id}',[ConsaltationController::class,'consalt
         ->name('consaltaions.postponed');
         
 Route::resource('consaltaions',ConsaltationController::class);
+//*******************************************************************************************/
+Route::get('contacts/readed',[ContactController::class,'readed'])->name('contacts.readed');
+Route::resource('contacts',ContactController::class);
+//*******************************************************************************************/
+Route::resource('datetimes',DateTimeController::class);
+//*******************************************************************************************/
+Route::resource('policies',PolicyController::class);
 //*******************************************************************************************/
 
 });

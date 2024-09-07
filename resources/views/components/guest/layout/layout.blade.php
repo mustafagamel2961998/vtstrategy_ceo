@@ -55,26 +55,26 @@
             </button>
             <!-- Buttons (for all screens, reordered for small screens) -->
             <div class="btns order-2 d-flex d-lg-none ms-auto me-3">
-                <a href="{{route('register.view')}}" class="btn btn-sm main-btn me-2">الإشتراك</a>
-                <a href="{{route('login.view')}}" class="btn btn-sm light-btn">الدخول</a>
+                <a href="{{route('guest.register.view')}}" class="btn btn-sm main-btn me-2">الإشتراك</a>
+                <a href="{{route('guest.login.view')}}" class="btn btn-sm light-btn">الدخول</a>
             </div>
             <!-- Navbar Links (collapsible) -->
             <div class="collapse navbar-collapse order-lg-2 order-4" id="nav">
                 <ul class="navbar-nav m-auto">
                     <li class="nav-item {{ request()->is('/') ? 'active' : '' }}">
-                        <a href="{{ url('/') }}" class="nav-link">الرئيسية</a>
+                        <a href="{{ route('guest.home.view') }}" class="nav-link">الرئيسية</a>
                     </li>
                     <li class="nav-item {{ request()->is('about') ? 'active' : '' }}">
                         <a href="{{ url('/about') }}" class="nav-link">من نحن</a>
                     </li>
                     <li class="nav-item {{ request()->is('articals') ? 'active' : '' }}">
-                        <a href="{{route('articals.index')}}" class="nav-link">المقالات</a>
+                        <a href="{{route('guest.articals.index')}}" class="nav-link">المقالات</a>
                     </li>
                     <li class="nav-item {{ request()->is('bookconsaltation') ? 'active' : '' }}">
-                        <a href="{{ route('bookingconsaltaions.index') }}" class="nav-link">حجز استشارة</a>
+                        <a href="{{ route('guest.bookingconsaltaions.index') }}" class="nav-link">حجز استشارة</a>
                     </li>
                     <li class="nav-item {{ request()->is('contact') ? 'active' : '' }}">
-                        <a href="{{ route('contacts.index') }}" class="nav-link">التواصل</a>
+                        <a href="{{ route('guest.contacts.index') }}" class="nav-link">التواصل</a>
                     </li>
                 </ul>
 
@@ -87,7 +87,11 @@
         </div>
     </nav>
     <!-- end navbar -->
-
+    @if(Session::has('success'))
+        <div class="alert alert-success">
+            {{Session::get('success')}}
+        </div>
+    @endif
     <!-- start content -->
     {{$slot}}
     <!-- end content -->

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Ceo\Dashboard\Article;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Ceo\Web\Dashboard\Articale\ArticleRequest;
 use App\Models\Ceo\Article;
+use App\Models\Ceo\Service;
 use Illuminate\Http\Request;
 
 class ArticleController extends Controller
@@ -14,8 +15,8 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $articles = Article::where('status','active')->with('category','media')->latest()->paginate(10);
-        return view('Dashboard.Article.index');
+        $articles = Article::with('service','media')->latest()->paginate(10);
+        return view('Dashboard.Article.index',compact('articles'));
     }
 
     /**
@@ -23,7 +24,9 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        return view('Dashboard.Article.create');
+        $article = new Article();
+        $services = Service::latest()->get();
+        return view('Dashboard.Article.create',compact('article','services'));
     }
 
     /**
@@ -39,7 +42,7 @@ class ArticleController extends Controller
                     ->toMediaCollection('article');
         }
 
-        // return redirect()->route()->with('success','تم إضافة المقالة بنجاح');
+        return redirect()->route('articles.index')->with('success','تم إضافة المقالة بنجاح');
     }
  
     /**
@@ -56,7 +59,9 @@ class ArticleController extends Controller
      */
     public function edit(string $id)
     {
-        return view('Dashboard.Article.edit');
+        $article = Article::with('media')->find($id);
+        $services = Service::latest()->get();
+        return view('Dashboard.Article.edit',compact('article','services'));
     }
 
     /**
@@ -76,6 +81,7 @@ class ArticleController extends Controller
                     ->toMediaCollection('article');
         }
 
+        return redirect()->route('articles.index')->with('success','تم تعديل المقالة بنجاح');
 
     }
 
@@ -87,7 +93,7 @@ class ArticleController extends Controller
         $delete = Article::find($id);
             $delete->clearMediaCollection('article');
         $delete->delete();
-       // return redirect()->route()->with('success','تم حذف المقالة بنجاح');
+       return redirect()->route('articles.store')->with('success','تم حذف المقالة بنجاح');
 
     }
 }

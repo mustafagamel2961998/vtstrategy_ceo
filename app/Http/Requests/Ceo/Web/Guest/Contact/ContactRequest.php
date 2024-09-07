@@ -1,27 +1,19 @@
 <?php
 
-namespace App\Http\Requests\Guest;
+namespace App\Http\Requests\Ceo\Web\Guest\Contact;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Support\Carbon;
 
-class ConsaltationRequest extends FormRequest
+class ContactRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
      */
-    public function prepareForValidation()
-    {
-        $dateTime = Carbon::parse($this->date_time);
-        $this->merge([
-            'date_time'=>$dateTime,
-        ]);
-    }
     public function authorize(): bool
     {
         return true;
     }
-
+   
     /**
      * Get the validation rules that apply to the request.
      *
@@ -31,13 +23,11 @@ class ConsaltationRequest extends FormRequest
     {
         return [
             'name'=>['required','string'],
-            'email'=>['nullable','email'],
             'phone'=>['required','string'],
             'whatsapp'=>['nullable','string'],
-            'service_id'=>['required','exists:services,id'],
-            'date_time'=>['required','date'],
-            'note'=>['nullable','string'],
+            'email'=>['nullable','email'],
+            'subject'=>['required','string'],
+            'content'=>['required','string']
         ];
     }
 }
-

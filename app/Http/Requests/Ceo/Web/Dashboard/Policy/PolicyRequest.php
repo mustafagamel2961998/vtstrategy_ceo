@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Guest\Auth;
+namespace App\Http\Requests\Ceo\Web\Dashboard\Policy;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class LoginRequest extends FormRequest
+class PolicyRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,8 +22,7 @@ class LoginRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'email'=>['required','email','exists:domains,email'],
-            'password'=>['required','string'],
+            'content'=>['required','string'],
         ];
     }
 }

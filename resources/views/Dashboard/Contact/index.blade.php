@@ -4,7 +4,7 @@
         <div class="dash-card">
             <div class="d-flex align-items-center justify-content-between mb-3">
                 <h5>الرسائل الجديدة</h5>
-                <a href="{{ route('messages.readed') }}" class="btn light-btn ms-auto">الرسائل المقروءة</a>
+                <a href="{{ route('contacts.readed') }}" class="btn light-btn ms-auto">الرسائل المقروءة</a>
             </div>
             <div class="table-responsive">
                 <table class="table table-bordered table-striped">
@@ -21,32 +21,51 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @forelse ($contacts as $key=>$contact)
                         <tr class="row-table">
-                            <td>1</td>
-                            <td>عاصم اسامة</td>
-                            <td>assem@yahoo.com</td>
-                            <td>01064792335</td>
-                            <td>01064792335</td>
-                            <td class="message-table">اريد الإستفسار على بعض المعلومات لديكم اريد الإستفسار على بعض المعلومات لديكم</td>
-                            <td><button class="btn btn-sm btn-outline-success d-flex align-items-center m-auto"><i
-                                        class="fa-solid fa-check-double"></i></button></td>
-                            <td><button class="btn btn-sm btn-outline-danger d-flex align-items-center m-auto"><i
-                                        class="fa-solid fa-trash"></i></button></td>
+                            <td>{{$key+1}}</td>
+                            <td>
+                                {{$contact->name}}
+                            </td>
+                            <td>
+                                {{$contact->email}}
+                            </td>
+                            <td>
+                                {{$contact->phone}}
+                            </td>
+                            <td>
+                                {{$contact->whatsapp}}
+                            </td>
+                            <td class="message-table">
+                                {{$contact->content}}                                
+                            </td>
+                            <td>
+                                <form action="{{route('contacts.update',$contact->id)}}" method="POST">
+                                    @csrf
+                                    @method('PUT')
+                                    <button class="btn btn-sm btn-outline-success d-flex align-items-center m-auto">
+                                        <i class="fa-solid fa-check-double"></i>
+                                    </button>
+                                </form>
+                            </td>
+                            <td>
+                                <form action="{{route('contacts.destroy',$contact->id)}}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button class="btn btn-sm btn-outline-danger d-flex align-items-center m-auto">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </button>
+                                </form>
+                             </td>
                         </tr>
-
-                        <tr class="row-table">
-                            <td>2</td>
-                            <td>عاصم اسامة</td>
-                            <td>assem@yahoo.com</td>
-                            <td>01064792335</td>
-                            <td>01064792335</td>
-                            <td class="message-table">اريد الإستفسار على بعض المعلومات لديكم اريد الإستفسار على بعض المعلومات لديكم</td>
-                            <td><button class="btn btn-sm btn-outline-success d-flex align-items-center m-auto"><i
-                                        class="fa-solid fa-check-double"></i></button></td>
-                            <td><button class="btn btn-sm btn-outline-danger d-flex align-items-center m-auto"><i
-                                        class="fa-solid fa-trash"></i></button></td>
-                        </tr>
-
+                        @empty
+                            <tr>
+                                <td colspan="8">
+                                    لا يوجد رسائل تواصل
+                                </td>
+                            </tr>
+                        @endforelse
+                       
 
                     </tbody>
                 </table>

@@ -8,15 +8,21 @@
         </div>
 
 
-        <form action="">
+        <form action="{{route('datetimes.store')}}" method="POST">
+            @csrf
             <!-- ما ينفعش يختار تاريخ سابق -->
             <div class="row g-3 align-items-end">
                 <div class="col-md-9">
                     <label for="time">الموعد</label>
-                    <input type="datetime-local" class="form-control" id="time">
+                    <input type="datetime-local" name="date_time" class="form-control" id="time">
+                    @error('date_time')
+                        <div class="alert alert-danger">
+                            {{$message}}
+                        </div>
+                    @enderror
                 </div>
                 <div class="col-md-3">
-                    <button class="btn main-btn">حفظ الموعد</button>
+                    <button type="submit" class="btn main-btn">حفظ الموعد</button>
                 </div>
             </div>
         </form>

@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Guest\Contact;
+namespace App\Http\Requests\Ceo\Web\Guest\Auth;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ContactRequest extends FormRequest
+class LoginRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +13,7 @@ class ContactRequest extends FormRequest
     {
         return true;
     }
-   
+
     /**
      * Get the validation rules that apply to the request.
      *
@@ -22,12 +22,8 @@ class ContactRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name'=>['required','string'],
-            'phone'=>['required','string'],
-            'whatsapp'=>['nullable','string'],
-            'email'=>['nullable','email'],
-            'subject'=>['required','string'],
-            'content'=>['required','string']
+            'email'=>['required','email','exists:domains,email'],
+            'password'=>['required','string'],
         ];
     }
 }

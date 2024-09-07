@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Ceo\Guest;
+namespace App\Http\Controllers\Ceo\Guest\Consaltation;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Guest\ConsaltationRequest;
+use App\Http\Requests\Ceo\Web\Guest\Consaltaion\ConsaltationRequest;
 use App\Models\Ceo\Consaltation;
+use App\Models\Ceo\Datetime;
 use App\Models\Service;
 use Illuminate\Http\Request;
 
@@ -16,7 +17,8 @@ class ConsaltationController extends Controller
     public function index()
     {
         $services = Service::latest()->get();
-        return view('Guest.Consaltation.index',compact('services'));
+        $datetimes = Datetime::latest()->get();
+        return view('Guest.Consaltation.index',compact('services','datetimes'));
     }
 
     /**

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Ceo\Guest\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Guest\Auth\RegisterRequest;
+use App\Http\Requests\Ceo\Web\Guest\Auth\RegisterRequest;
 use App\Mail\RegisterOtpMail;
 use App\Models\Admin;
 use App\Models\Ceo\Domain;

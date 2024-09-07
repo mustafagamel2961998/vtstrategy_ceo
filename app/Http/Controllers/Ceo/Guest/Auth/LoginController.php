@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Ceo\Guest\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Guest\Auth\LoginRequest;
+use App\Http\Requests\Ceo\Web\Guest\Auth\LoginRequest;
 use App\Models\Admin;
 use App\Models\Ceo\Domain;
 use App\Models\Ceo\Tenant;

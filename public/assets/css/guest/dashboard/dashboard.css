@@ -445,11 +445,11 @@ table a:hover{
         font-size: 12px;
     }
 }
-.row-table:nth-child(even) .message-table{
+/* .row-table:nth-child(even) .message-table{
     background-color: #1d2227 !important;
     color: white !important;
     text-wrap: wrap;
-}
+} */
 .row-table:nth-child(odd) .message-table{
     background-color: white !important;
     color: #1d2227 !important;

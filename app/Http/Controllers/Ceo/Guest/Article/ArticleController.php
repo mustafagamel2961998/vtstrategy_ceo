@@ -13,7 +13,7 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $articles = Article::where('status','active')->with('category','media')->latest()->paginate(10);
+        $articles = Article::where('status','active')->with('service','media')->latest()->paginate(10);
         return view('Guest.articale.index',compact('articles'));
     }
 

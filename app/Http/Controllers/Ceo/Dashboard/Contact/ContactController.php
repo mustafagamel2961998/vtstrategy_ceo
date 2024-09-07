@@ -13,8 +13,8 @@ class ContactController extends Controller
      */
     public function index()
     {
-        $contacts = Contact::latest()->get();
-        return view('Dashboard.Contact.index');
+        $contacts = Contact::where('status','pending')->latest()->get();
+        return view('Dashboard.Contact.index',compact('contacts'));
     }
     /**
      * Show the form for creating a new resource.
@@ -57,7 +57,7 @@ class ContactController extends Controller
         $update->update([
             'status'=>'readed'
         ]);
-        // return redirect()->round()->with('success','تم تعديل حالة الرساله بنجاح');
+        return redirect()->route('contacts.index')->with('success','تم تعديل حالة الرساله بنجاح');
     }
 
     /**
@@ -67,7 +67,12 @@ class ContactController extends Controller
     {
         $delete = Contact::find($id);
         $delete->delete();
-        // return redirect()->round()->with('success','تم حذف الرساله بنجاح');
+        return redirect()->route('contacts.index')->with('success','تم حذف الرساله بنجاح');
 
+    }
+
+    public function readed(){
+        $contacts = Contact::where('status','readed')->latest()->get();
+        return view('Dashboard.Contact.readed',compact('contacts'));
     }
 }

@@ -32,17 +32,17 @@
                 <a href="{{ route('homes.index') }}"><img src="{{asset('assets/images/icon.png')}}" width="70" alt=""></a>
             </div>
             <ul class="sidebar-nav">
-                <li class="{{ Request::is('dashboard/homes*') ? 'active' : '' }}">
+                <li class="{{ Route::is('homes*') ? 'active' : '' }}">
                     <a href="{{ route('homes.index') }}"><i class="fa-solid fa-chart-simple"></i>الإحصائيات</a>
                 </li>
-                <li class="{{ Request::is('dashboard/services*') ? 'active' : '' }}">
+                <li class="{{ Route::is('services*') ? 'active' : '' }}">
                     <a href="{{ route('services.index') }}"><i class="fa-solid fa-list-ol"></i>الخدمات والمعلومات</a>
                 </li>
-                <li class="{{ Request::is('dashboard/consaltaions*') ? 'active' : '' }}">
+                <li class="{{ Route::is('consaltaions*') ? 'active' : '' }}">
                     <a href="{{ route('consaltaions.index') }}"><i class="fa-solid fa-calendar-check"></i>استشارات محجوزة</a>
                 </li>
-                <li class="{{ Request::is('dashboard/messages*') ? 'active' : '' }}">
-                    <a href="{{ route('messages.index') }}"><i class="fa-solid fa-comments"></i>الرسائل</a>
+                <li class="{{ Route::is('contacts.index') ? 'active' : '' }}">
+                    <a href="{{ route('contacts.index') }}"><i class="fa-solid fa-comments"></i>الرسائل</a>
                 </li>
                 <li class="{{ Request::is('dashboard/Subscriber*') ? 'active' : '' }}">
                     <a href="{{ route('Subscriber') }}"><i class="fa-solid fa-users"></i>المشتركين</a>
@@ -58,14 +58,14 @@
                 <li class="{{ Request::is('dashboard/topclient*') ? 'active' : '' }}">
                     <a href="{{ route('topclient') }}"><i class="fa-solid fa-user-tie"></i>كبار العملاء</a>
                 </li>
-                <li class="{{ Request::is('dashboard/addtime*') ? 'active' : '' }}">
-                    <a href="{{ route('addtime') }}"><i class="fa-solid fa-calendar-plus"></i>إضافة مواعيد استشارات</a>
+                <li class="{{ Route::is('datetimes.*') ? 'active' : '' }}">
+                    <a href="{{ route('datetimes.index') }}"><i class="fa-solid fa-calendar-plus"></i>إضافة مواعيد استشارات</a>
                 </li>
                 <li class="{{ Request::is('dashboard/rate*') ? 'active' : '' }}">
                     <a href="{{ route('rate') }}"><i class="fa-regular fa-star-half-stroke"></i>إضافة آراء عملاء</a>
                 </li>
-                <li class="{{ Request::is('dashboard/Policyandprivacy*') ? 'active' : '' }}">
-                    <a href="{{ route('Policyandprivacy') }}"><i class="fa-solid fa-user-lock"></i>السياسة والخصوصية</a>
+                <li class="{{ Route::is('policies.*') ? 'active' : '' }}">
+                    <a href="{{ route('policies.index') }}"><i class="fa-solid fa-user-lock"></i>السياسة والخصوصية</a>
                 </li>
                 <li class="{{ Request::is('dashboard/TermsandConditions*') ? 'active' : '' }}">
                     <a href="{{ route('TermsandConditions') }}"><i class="fa-solid fa-scale-unbalanced-flip"></i>الشروط والأحكام</a>

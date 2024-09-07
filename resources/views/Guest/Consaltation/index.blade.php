@@ -90,7 +90,7 @@
                     </div>
                 </div>
                 <div class="col-lg-8">
-                    <form action="{{route('bookingconsaltaions.store')}}" method="POST" class="container">
+                    <form action="{{route('guest.bookingconsaltaions.store')}}" method="POST" class="container">
                         @csrf
                     
 
@@ -150,9 +150,11 @@
                             </div>
                             <div class="col-md-6">
                                 <select name="date_time" id="date_time" class="form-control" dir="ltr">
-                                    <option value="غير محدد" disabled>موعد الإستشارة</option>
-                                    
-                                    <option value="2024-09-05 10:23" data-text="2024-09-05 10:23">2024-10-24 03:00</option>
+                                    {{-- <option value="غير محدد" disabled>موعد الإستشارة</option> --}}
+                                        @foreach ($datetimes as $datetime)
+                                            
+                                        <option value="{{$datetime->date_time}}" data-text="{{$datetime->date_time->format('Y-m-d h:i a')}}">{{$datetime->date_time->format('Y-m-d h:i a')}}</option>
+                                        @endforeach
 
                                 </select>
                                 @error('date_time')

@@ -9,6 +9,19 @@ class ArticleRequest extends FormRequest
     /**
      * Determine if the user is authorized to make this request.
      */
+    public function prepareForValidation()
+    {
+        if($this->status){
+            $status = 'active';
+        } else{
+            $status = 'archived';
+        }
+
+        $this->merge([
+            'status'=>$status,
+        ]);
+    }
+
     public function authorize(): bool
     {
         return true;
@@ -22,9 +35,10 @@ class ArticleRequest extends FormRequest
     public function rules(): array
     {
         return [
-            // 'category_id'=>['required','exists:categories,id'],
+            'service_id'=>['required','exists:services,id'],
             'title'=>['required','string'],
-            'content'=>['required','string']
+            'content'=>['required','string'],
+            'article'=>['required','mimes:png,jpg,jpeg']
         ];
     }
    

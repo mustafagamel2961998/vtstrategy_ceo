@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Ceo\Web\Dashboard;
+namespace App\Http\Requests\Ceo\Web\Dashboard\Datetime;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ConsaltaionPostponedRequest extends FormRequest
+class DatetimeRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,7 +22,7 @@ class ConsaltaionPostponedRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'date_time'=>['required','date_format:Y-m-d H:i'],
+            'date_time'=>['required','date']
         ];
     }
 }
