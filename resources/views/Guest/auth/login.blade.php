@@ -24,7 +24,7 @@
     <div class="overlay"></div>
     <div class="wrapper my-5">
 
-        <form action="{{route('login.method')}}" method="POST">
+        <form action="{{route('guest.login.method')}}" method="POST">
             @csrf
             {{-- @if(Session::has('domain'))
             <script>

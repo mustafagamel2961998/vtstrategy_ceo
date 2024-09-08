@@ -14,7 +14,8 @@ class ContactController extends Controller
     public function index()
     {
         $contacts = Contact::where('status','pending')->latest()->get();
-        return view('Dashboard.Contact.index',compact('contacts'));
+        $readed_contacts_count = Contact::where('status','readed')->count();
+        return view('Dashboard.Contact.index',compact('contacts','readed_contacts_count'));
     }
     /**
      * Show the form for creating a new resource.

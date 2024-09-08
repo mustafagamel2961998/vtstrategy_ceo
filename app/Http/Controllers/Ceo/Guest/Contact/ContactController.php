@@ -15,7 +15,7 @@ class ContactController extends Controller
      */
     public function index()
     {
-        return view('Guest.contact.contact');
+        return view('Guest.Contact.index');
     }
 
     /**
@@ -32,8 +32,8 @@ class ContactController extends Controller
     public function store(ContactRequest $request)
     {
     
-        $store = Contact::create($request->all());
-        return redirect()->route('home.view')->with('success','تم إرسال رسالتك بنجاح');
+        Contact::create($request->all());
+        return redirect()->route('guest.home.view')->with('success','تم إرسال رسالتك بنجاح');
     }
 
     /**

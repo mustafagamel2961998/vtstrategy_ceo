@@ -44,19 +44,19 @@
                 <li class="{{ Route::is('contacts.index') ? 'active' : '' }}">
                     <a href="{{ route('contacts.index') }}"><i class="fa-solid fa-comments"></i>الرسائل</a>
                 </li>
-                <li class="{{ Request::is('dashboard/Subscriber*') ? 'active' : '' }}">
-                    <a href="{{ route('Subscriber') }}"><i class="fa-solid fa-users"></i>المشتركين</a>
+                <li class="{{ Route::is('subscribers*') ? 'active' : '' }}">
+                    <a href="{{ route('subscribers.index') }}"><i class="fa-solid fa-users"></i>المشتركين</a>
                 </li>
                 
                 <li class="{{ Request::is('dashboard/articles*') ? 'active' : '' }}">
                     <a href="{{ route('articles.index') }}"><i class="fa-regular fa-newspaper"></i>المقالات</a>
                 </li>
                
-                <li class="{{ Request::is('dashboard/question*') ? 'active' : '' }}">
-                    <a href="{{ route('question') }}"><i class="fa-solid fa-clipboard-question"></i>الأسئلة الشائعة</a>
+                <li class="{{ Route::is('questions*') ? 'active' : '' }}">
+                    <a href="{{ route('questions.index') }}"><i class="fa-solid fa-clipboard-question"></i>الأسئلة الشائعة</a>
                 </li>
-                <li class="{{ Request::is('dashboard/topclient*') ? 'active' : '' }}">
-                    <a href="{{ route('topclient') }}"><i class="fa-solid fa-user-tie"></i>كبار العملاء</a>
+                <li class="{{ Route::is('customers.*') ? 'active' : '' }}">
+                    <a href="{{ route('customers.index') }}"><i class="fa-solid fa-user-tie"></i>كبار العملاء</a>
                 </li>
                 <li class="{{ Route::is('datetimes.*') ? 'active' : '' }}">
                     <a href="{{ route('datetimes.index') }}"><i class="fa-solid fa-calendar-plus"></i>إضافة مواعيد استشارات</a>

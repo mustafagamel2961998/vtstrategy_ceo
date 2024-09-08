@@ -6,26 +6,9 @@
                 <h5>إضافة سؤال جديد</h5>
             </div>
 
-            <form action="">
-                <div class="row g-3">
-
-                    <div class="col-12">
-                        <label for="question">السؤال</label>
-                        <input type="text" id="question" placeholder="......؟" class="form-control">
-                    </div>
-                    <div class="col-12">
-
-                        <label for="answer">إجابة السؤال</label>
-
-                        <textarea id="answer" class="form-control" placeholder="إجابة السؤال"></textarea>
-
-                    </div>
-                    <div class="col-12">
-                        <button class="btn main-btn">أضف سؤال جديد</button>
-                    </div>
-
-
-                </div>
+            <form action="{{route('questions.store')}}" method="POST">
+                @csrf
+                @include('Dashboard.Question._form',['btn_text'=>'إضافة','question'=>$question])
             </form>
 
         </div>

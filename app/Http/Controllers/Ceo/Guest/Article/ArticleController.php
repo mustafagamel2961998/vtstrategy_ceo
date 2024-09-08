@@ -38,7 +38,8 @@ class ArticleController extends Controller
      */
     public function show(string $id)
     {
-        return view('Guest.articale.show');
+        $article = Article::with('media')->find($id);
+        return view('Guest.articale.show',compact('article'));
     }
 
     /**

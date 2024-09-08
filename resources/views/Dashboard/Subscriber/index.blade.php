@@ -19,16 +19,22 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="row-table">
-                            <td>1</td>
-                            <td>هاني كمال</td>
-                            <td class="table-logo"><img src="{{asset('assets/images/logos/logo4.png')}}" alt=""></td>
-                            <td class="message-table">الغزالى</td>
-                           <td><a href="">elgazaly</a></td>
-                            <td>01064792335</td>
-                            <td>hany@yahoo.com</td>
-                        </tr>
-
+                        @forelse ($subscribers as $key=>$subscriber)
+                            <tr class="row-table">
+                                <td>{{$key+1}}</td>
+                                <td>{{$subscriber->name}}</td>
+                                <td class="table-logo"><img src="{{asset('assets/images/logos/logo4.png')}}" alt=""></td>
+                                <td class="message-table">{{$subscriber->company_name_ar}}</td>
+                            <td><a href="">{{$subscriber->domain}}</a></td>
+                                <td>{{$subscriber->mobile}}</td>
+                                <td>{{$subscriber->email}}</td>
+                            </tr>
+                        @empty
+                            <tr>
+                                <td colspan="7">لا يوجد بيانات</td>
+                            </tr>
+                        @endforelse
+                   
 
                     </tbody>
                 </table>

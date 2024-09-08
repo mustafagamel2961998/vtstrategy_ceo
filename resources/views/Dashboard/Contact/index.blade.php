@@ -4,7 +4,7 @@
         <div class="dash-card">
             <div class="d-flex align-items-center justify-content-between mb-3">
                 <h5>الرسائل الجديدة</h5>
-                <a href="{{ route('contacts.readed') }}" class="btn light-btn ms-auto">الرسائل المقروءة</a>
+                <a href="{{ route('contacts.readed') }}" class="btn light-btn ms-auto">الرسائل المقروءة ({{$readed_contacts_count}})</a>
             </div>
             <div class="table-responsive">
                 <table class="table table-bordered table-striped">

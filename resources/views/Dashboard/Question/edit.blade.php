@@ -5,26 +5,11 @@
             <div class="d-flex align-items-center justify-content-between mb-3">
                 <h5>تعديل سؤال</h5>
             </div>
-            <form action="">
-            <div class="row g-3">
-                
-                <div class="col-12">
-                    <label for="question">السؤال</label>
-                    <input type="text" id="question" placeholder="......؟" class="form-control">
-                </div>
-                <div class="col-12">
+            <form action="{{route('questions.update',$question->id)}}" method="POST">
+                @csrf
+                @method('PUT')
+                @include('Dashboard.Question._form',['btn_text'=>'تعديل','question'=>$question])
 
-                    <label for="answer">إجابة السؤال</label>
-
-                    <textarea id="answer" class="form-control" placeholder="إجابة السؤال"></textarea>
-                    
-                </div>
-                <div class="col-12">
-                    <button class="btn main-btn">عدل السؤال</button>
-                </div>
-
-
-            </div>
         </form>
            
         </div>

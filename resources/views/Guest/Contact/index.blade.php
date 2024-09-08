@@ -47,30 +47,51 @@
             </div>
             <div class="row g-md-5 align-items-center">
                 <div class="col-lg-7">
-                    <form action="" class="container">
+                    <form action="{{route('guest.contacts.store')}}"  method="POST" class="container">
+                        @csrf
                         <div class="row g-4">
                             <div class="col-md-6">
-                                <input type="text" class="form-control" placeholder="الأسم">
+                                @error('name')
+                                    <p>{{$message}}</p>
+                                @enderror
+                                <input type="text" name="name" class="form-control" placeholder="الأسم" value="{{old('name')}}">
                             </div>
                             <div class="col-md-6">
-                                <input type="email" class="form-control" placeholder="البريد الإلكتروني">
+                                @error('email')
+                                    <p>{{$message}}</p>
+                                @enderror
+                                <input type="email" name="email" class="form-control" placeholder="البريد الإلكتروني" value="{{old('email')}}">
                             </div>
                             <div class="col-md-6">
-                                <input type="tel" class="form-control" placeholder="رقم الهاتف">
+                                @error('phone')
+                                    <p>{{$message}}</p>
+                                @enderror
+                                <input type="text" name="phone" class="form-control" placeholder="رقم الهاتف" value="{{old('phone')}}">
                             </div>
                             <div class="col-md-6">
-                                <input type="tel" class="form-control" placeholder="رقم واتساب">
+                                @error('whatsapp')
+                                    <p>{{$message}}</p>
+                                @enderror
+                                <input type="text" name="whatsapp" class="form-control" placeholder="رقم واتساب" value="{{old('whatsapp')}}">
                             </div>
                             <div class="col-md-12">
-                                <input type="text" class="form-control" placeholder="عنوان الرسالة">
+                                @error('subject')
+                                    <p>{{$message}}</p>
+                                @enderror
+                                <input type="text" class="form-control" name="subject" placeholder="عنوان الرسالة" value="{{old('subject')}}">
                             </div>
                             <div class="col-12">
-                                <textarea name="" class="form-control" id="" placeholder="الرسالة"></textarea>
+                                @error('content')
+                                    <p>{{$message}}</p>
+                                @enderror
+                                <textarea name="content" id="content"  class="form-control" placeholder="الرسالة" value="{{old('content')}}"></textarea>
 
                             </div>
                             <div class="col-12">
                                 <button class="btn main-btn w-100 d-flex align-items-center justify-content-center"><i
-                                        class="fa-solid fa-envelope me-2"></i> ارسال الرسالة</button>
+                                        class="fa-solid fa-envelope me-2"></i>
+                                         ارسال الرسالة
+                               </button>
                             </div>
                         </div>
 

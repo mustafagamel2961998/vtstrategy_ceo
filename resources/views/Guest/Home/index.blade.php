@@ -215,103 +215,35 @@
                         class="back-ico-md bottom-right shake-vertical rotate-180" alt="">
 
                 </div>
+                @foreach ($services as $service)
+                    
+          
                 <div class="col-xl-4 col-md-6 d-flex align-items-stretch">
                     <div class="law text-center">
                         <div class="icon-wrap">
                             <div class="mini-icon d-flex align-items-center justify-content-center">
-                                <i class="fas fa-briefcase"></i>
+                                @if($service->small_icon_class)
+                                <i class="{{$service->small_icon_class}}"></i>
+                                @else
+                                    <i class="fas fa-briefcase"></i>
+                                @endif
                             </div>
                             <div class="icon d-flex align-items-center justify-content-center">
-                                <i class="fa-solid fa-shop"></i>
+                                @if($service->big_icon_class)
+                                <i class="{{$service->big_icon_class}}"></i>
+                                @else
+                                    <i class="fa-solid fa-shop"></i>
+                                @endif
                             </div>
                         </div>
-                        <h2>القانون التجاري</h2>
-                        <p>ينظم هذا القانون جميع الأنشطة التجارية في المملكة مثل قوانين الشركات، قوانين البنوك، وقوانين
-                            حماية المستهلك. يهدف القانون التجاري إلى تنظيم بيئة الأعمال وضمان الاستقرار الاقتصادي.</p>
+                        <h2>{{$service->title}}</h2>
+                        <p>
+                            {{$service->content}}
+                        </p>
                     </div>
                 </div>
-                <div class="col-xl-4 col-md-6 d-flex align-items-stretch">
-                    <div class="law text-center">
-                        <div class="icon-wrap">
-                            <div class="mini-icon d-flex align-items-center justify-content-center">
-                                <i class="fa-solid fa-users"></i>
-                            </div>
-                            <div class="icon d-flex align-items-center justify-content-center">
-                                <i class="fas fa-balance-scale"></i>
-                            </div>
-                        </div>
-                        <h2>القانون المدني</h2>
-                        <p>يشمل القانون المدني في السعودية الأنظمة التي تنظم المعاملات التجارية والمدنية بين الأفراد
-                            والشركات. تتضمن قوانين الملكية، العقود، الأضرار، وأحكام المسؤولية المدنية. يعتمد بشكل أساسي
-                            على الفقه الإسلامي مع بعض الأنظمة الحديثة المكملة.</p>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-md-6 d-flex align-items-stretch">
-                    <div class="law text-center">
-                        <div class="icon-wrap">
-                            <div class="mini-icon d-flex align-items-center justify-content-center">
-                                <i class="fas fa-gavel"></i>
-                            </div>
-                            <div class="icon d-flex align-items-center justify-content-center">
-                                <i class="fa-solid fa-handcuffs"></i>
-                            </div>
-                        </div>
-                        <h2>القانون الجنائي</h2>
-                        <p>يركز القانون الجنائي في السعودية على الجرائم والعقوبات. يعتمد بشكل كبير على الشريعة الإسلامية
-                            ويشمل تطبيق الحدود (مثل السرقة والزنا والقتل)، والقصاص (مثل العقوبات الجسدية)، بالإضافة إلى
-                            التعزيرات التي تترك تقدير العقوبة للقضاة.</p>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-md-6 d-flex align-items-stretch">
-                    <div class="law text-center">
-                        <div class="icon-wrap">
-                            <div class="mini-icon d-flex align-items-center justify-content-center">
-                                <i class="fa-solid fa-heart-pulse"></i>
-                            </div>
-                            <div class="icon d-flex align-items-center justify-content-center">
-                                <i class="fa-solid fa-people-roof"></i>
-                            </div>
-                        </div>
-                        <h2>القانون الأسري</h2>
-                        <p>يتعامل مع مسائل الزواج، الطلاق، النفقة، وحضانة الأطفال. يعتمد هذا القانون بشكل كبير على
-                            الشريعة الإسلامية ويطبق من خلال محاكم الأحوال الشخصية. يشمل القانون الأسري أيضًا جوانب مثل
-                            حقوق الوالدين، الميراث، الوصاية، وتنظيم العلاقات داخل الأسرة بما يحقق العدالة والحماية
-                            لأفرادها.</p>
-
-                    </div>
-                </div>
-                <div class="col-xl-4 col-md-6 d-flex align-items-stretch">
-                    <div class="law text-center">
-                        <div class="icon-wrap">
-                            <div class="mini-icon d-flex align-items-center justify-content-center">
-                                <i class="fas fa-university"></i>
-                            </div>
-                            <div class="icon d-flex align-items-center justify-content-center">
-                                <i class="fa-solid fa-user-tie"></i>
-                            </div>
-                        </div>
-                        <h2>القانون الإداري</h2>
-                        <p>ينظم هذا القانون العلاقة بين الجهات الحكومية والأفراد، بما في ذلك اللوائح والأنظمة المتعلقة
-                            بالإجراءات الحكومية، وأمور مثل المناقصات العامة، والتوظيف في القطاع الحكومي. يهدف القانون
-                            الإداري إلى تنظيم سير العمل في المؤسسات الحكومية وضمان العدالة والشفافية.</p>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-md-6 d-flex align-items-stretch">
-                    <div class="law text-center">
-                        <div class="icon-wrap">
-                            <div class="mini-icon d-flex align-items-center justify-content-center">
-                                <i class="fas fa-building"></i>
-                            </div>
-                            <div class="icon d-flex align-items-center justify-content-center">
-                                <i class="fa-solid fa-building-user"></i>
-                            </div>
-                        </div>
-                        <h2>القانون العقاري</h2>
-                        <p>ينظم القانون العقاري في السعودية جميع المسائل المتعلقة بتملك، تأجير، تطوير، وإدارة العقارات،
-                            بما في ذلك تسجيل الملكية، عقود الإيجار، الرهن العقاري، وحقوق الأطراف المعنية. يهدف القانون
-                            إلى ضمان حقوق الملاك والمستثمرين وتنظيم السوق العقارية بما يحقق الاستقرار والتنمية.</p>
-                    </div>
-                </div>
+                @endforeach
+               
             </div>
         </div>
     </section>
@@ -325,28 +257,28 @@
                 <div class="col-md-3 col-sm-6">
                     <div class="single_counter p-4">
                         <i class="fa-solid fa-handshake"></i>
-                        <h2 class="statistic-counter" data-count="14">0</h2>
+                        <h2 class="statistic-counter" data-count="{{$counter_of_numbers->successful_consultation_count}}">0</h2>
                         <p>استشارة ناجحة</p>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6">
                     <div class="single_counter p-4">
                         <i class="fa-solid fa-hand-holding-heart"></i>
-                        <h2 class="statistic-counter" data-count="53">0</h2>
+                        <h2 class="statistic-counter" data-count="{{$counter_of_numbers->satisfied_customer_count}}">0</h2>
                         <p>عميل راضٍ</p>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6">
                     <div class="single_counter p-4">
                         <i class="fa fa-globe"></i>
-                        <h2 class="statistic-counter" data-count="24">0</h2>
+                        <h2 class="statistic-counter" data-count="{{$counter_of_numbers->created_website_count}}">0</h2>
                         <p>موقع مُنشأ</p>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6">
                     <div class="single_counter p-4">
                         <i class="fa fa-user-tie"></i>
-                        <h2 class="statistic-counter" data-count="12">0</h2>
+                        <h2 class="statistic-counter" data-count="{{$counter_of_numbers->expert_advisor_count}}">0</h2>
                         <p>مستشار خبير</p>
                     </div>
                 </div>
@@ -420,42 +352,23 @@
         </div>
         <div class="container">
             <div class="row g-3 ">
+                @forelse ($latest_six_customers as $latest_six_customer)
                 <div class="col-6 col-md-4 col-lg-3 col-xl-2  align-items-center">
                     <div class="logo p-4 h-100 d-flex flex-column align-items-center">
-                        <img src="{{asset('assets/images/logos/logo1.png')}}" class="w-100" alt="">
-                        <button class="btn light-btn mt-auto">زيارة الموقع</button>
+                        <img src="{{$latest_six_customer->getFirstMediaUrl('customer')}}" class="w-100" alt="">
+                        <a href="{{$latest_six_customer->website}}" target="_blank">
+
+                            <button class="btn light-btn mt-auto">زيارة الموقع</button>
+                        </a>
                     </div>
                 </div>
-                <div class="col-6 col-md-4 col-lg-3 col-xl-2  align-items-center">
-                    <div class="logo p-4 h-100 d-flex flex-column align-items-center">
-                        <img src="{{asset('assets/images/logos/logo2.png')}}" class="w-100" alt="">
-                        <button class="btn light-btn mt-auto">زيارة الموقع</button>
+                @empty
+                    <div>
+                        لا يوجد بيانات
                     </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3 col-xl-2  align-items-center">
-                    <div class="logo p-4 h-100 d-flex flex-column align-items-center">
-                        <img src="{{asset('assets/images/logos/logo3.png')}}" class="w-100" alt="">
-                        <button class="btn light-btn mt-auto">زيارة الموقع</button>
-                    </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3 col-xl-2  align-items-center">
-                    <div class="logo p-4 h-100 d-flex flex-column align-items-center">
-                        <img src="{{asset('assets/images/logos/logo4.png')}}" class="w-100" alt="">
-                        <button class="btn light-btn mt-auto">زيارة الموقع</button>
-                    </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3 col-xl-2  align-items-center">
-                    <div class="logo p-4 h-100 d-flex flex-column align-items-center">
-                        <img src="{{asset('assets/images/logos/logo1.png')}}" class="w-100" alt="">
-                        <button class="btn light-btn mt-auto">زيارة الموقع</button>
-                    </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3 col-xl-2  align-items-center">
-                    <div class="logo p-4 h-100 d-flex flex-column align-items-center">
-                        <img src="{{asset('assets/images/logos/logo2.png')}}" class="w-100" alt="">
-                        <button class="btn light-btn mt-auto">زيارة الموقع</button>
-                    </div>
-                </div>
+                @endforelse
+                
+             
             </div>
         </div>
     </section>
@@ -478,31 +391,35 @@
 
                 <!-- اعرض اخر 6 مقالات -->
                 <!-- articale card -->
+                @foreach ($latest_six_articles as $latest_six_article)
+                    
+                
                 <div class="col-12 col-xl-4 col-md-6">
                     <article>
                         <div class="card border-0">
                             <figure class="card-img-top m-0 overflow-hidden bsb-overlay-hover">
                                 <div class="img-contain">
                                     <img class="img-fluid bsb-scale bsb-hover-scale-up" loading="lazy"
-                                        src="{{asset('assets/images/article.jpg')}}" alt="Business">
+                                        src="{{$latest_six_article->getFirstMediaUrl('article')}}" alt="Business">
                                 </div>
                             </figure>
                             <div class="card-body border bg-white p-3">
                                 <div class="entry-header mb-3">
                                     <ul class="entry-meta list-unstyled d-flex mb-2">
                                         <li>
-                                            <span>قانون تجاري</span>
+                                            <span>
+                                                {{$latest_six_article->service->title}}
+                                            </span>
                                         </li>
                                     </ul>
                                     <h2 class="card-title entry-title mb-0">
-                                        <h2>أهمية القانون التجاري في تنظيم الأعمال التجارية وتعزيز الثقة
-                                            الاقتصادية</h2>
+                                        <h2>
+                                            {{$latest_six_article->title}}
+                                        </h2>
                                     </h2>
                                 </div>
                                 <p class="card-text entry-summary text-secondary">
-                                    يلعب القانون التجاري دورًا حيويًا في تنظيم العلاقات بين التجار وحماية حقوقهم
-                                    في مختلف المعاملات التجارية. فهو يمثل الإطار القانوني الذي يضمن الشفافية
-                                    والثقة في التعاملات التجارية، مما يسهم في استقرار الأسواق وتعزيز النمو ...
+                                   {!! $latest_six_article->content!!}
                                 </p>
                             </div>
                             <div class="card-footer border border-top-0 bg-white p-4">
@@ -520,273 +437,21 @@
                                         </p>
                                     </li>
                                     <li>
-                                        <a href="#"><i class="fa-solid fa-book-open"></i> أقرأ المزيد</a>
+                                        <a href="{{route('guest.articals.show',$latest_six_article->id)}}"><i class="fa-solid fa-book-open"></i> أقرأ المزيد</a>
                                     </li>
                                 </ul>
                             </div>
                         </div>
                     </article>
                 </div>
+            @endforeach    
 
-                <!-- articale card -->
-                <div class="col-12 col-xl-4 col-md-6">
-                    <article>
-                        <div class="card border-0">
-                            <figure class="card-img-top m-0 overflow-hidden bsb-overlay-hover">
-                                <div class="img-contain">
-                                    <img class="img-fluid bsb-scale bsb-hover-scale-up" loading="lazy"
-                                        src="{{asset('assets/images/article.jpg')}}" alt="Business">
-                                </div>
-                            </figure>
-                            <div class="card-body border bg-white p-3">
-                                <div class="entry-header mb-3">
-                                    <ul class="entry-meta list-unstyled d-flex mb-2">
-                                        <li>
-                                            <span>قانون تجاري</span>
-                                        </li>
-                                    </ul>
-                                    <h2 class="card-title entry-title mb-0">
-                                        <h2>أهمية القانون التجاري في تنظيم الأعمال التجارية وتعزيز الثقة
-                                            الاقتصادية</h2>
-                                    </h2>
-                                </div>
-                                <p class="card-text entry-summary text-secondary">
-                                    يلعب القانون التجاري دورًا حيويًا في تنظيم العلاقات بين التجار وحماية حقوقهم
-                                    في مختلف المعاملات التجارية. فهو يمثل الإطار القانوني الذي يضمن الشفافية
-                                    والثقة في التعاملات التجارية، مما يسهم في استقرار الأسواق وتعزيز النمو ...
-                                </p>
-                            </div>
-                            <div class="card-footer border border-top-0 bg-white p-4">
-                                <ul class="list-unstyled d-flex align-items-center justify-content-between m-0">
-                                    <li>
-                                        <p class="text-decoration-none d-flex align-items-center mb-0" href="#">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
-                                                fill="currentColor" class="bi bi-calendar3" viewBox="0 0 18 18">
-                                                <path
-                                                    d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857V3.857z" />
-                                                <path
-                                                    d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
-                                            </svg>
-                                            <span class="ms-2">25 أغسطس 2024</span>
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fa-solid fa-book-open"></i> أقرأ المزيد</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-
-                <!-- articale card -->
-                <div class="col-12 col-xl-4 col-md-6">
-                    <article>
-                        <div class="card border-0">
-                            <figure class="card-img-top m-0 overflow-hidden bsb-overlay-hover">
-                                <div class="img-contain">
-                                    <img class="img-fluid bsb-scale bsb-hover-scale-up" loading="lazy"
-                                        src="{{asset('assets/images/article.jpg')}}" alt="Business">
-                                </div>
-                            </figure>
-                            <div class="card-body border bg-white p-3">
-                                <div class="entry-header mb-3">
-                                    <ul class="entry-meta list-unstyled d-flex mb-2">
-                                        <li>
-                                            <span>قانون تجاري</span>
-                                        </li>
-                                    </ul>
-                                    <h2 class="card-title entry-title mb-0">
-                                        <h2>أهمية القانون التجاري في تنظيم الأعمال التجارية وتعزيز الثقة
-                                            الاقتصادية</h2>
-                                    </h2>
-                                </div>
-                                <p class="card-text entry-summary text-secondary">
-                                    يلعب القانون التجاري دورًا حيويًا في تنظيم العلاقات بين التجار وحماية حقوقهم
-                                    في مختلف المعاملات التجارية. فهو يمثل الإطار القانوني الذي يضمن الشفافية
-                                    والثقة في التعاملات التجارية، مما يسهم في استقرار الأسواق وتعزيز النمو ...
-                                </p>
-                            </div>
-                            <div class="card-footer border border-top-0 bg-white p-4">
-                                <ul class="list-unstyled d-flex align-items-center justify-content-between m-0">
-                                    <li>
-                                        <p class="text-decoration-none d-flex align-items-center mb-0" href="#">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
-                                                fill="currentColor" class="bi bi-calendar3" viewBox="0 0 18 18">
-                                                <path
-                                                    d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857V3.857z" />
-                                                <path
-                                                    d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
-                                            </svg>
-                                            <span class="ms-2">25 أغسطس 2024</span>
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fa-solid fa-book-open"></i> أقرأ المزيد</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-
-                <!-- articale card -->
-                <div class="col-12 col-xl-4 col-md-6">
-                    <article>
-                        <div class="card border-0">
-                            <figure class="card-img-top m-0 overflow-hidden bsb-overlay-hover">
-                                <div class="img-contain">
-                                    <img class="img-fluid bsb-scale bsb-hover-scale-up" loading="lazy"
-                                        src="{{asset('assets/images/article.jpg')}}" alt="Business">
-                                </div>
-                            </figure>
-                            <div class="card-body border bg-white p-3">
-                                <div class="entry-header mb-3">
-                                    <ul class="entry-meta list-unstyled d-flex mb-2">
-                                        <li>
-                                            <span>قانون تجاري</span>
-                                        </li>
-                                    </ul>
-                                    <h2 class="card-title entry-title mb-0">
-                                        <h2>أهمية القانون التجاري في تنظيم الأعمال التجارية وتعزيز الثقة
-                                            الاقتصادية</h2>
-                                    </h2>
-                                </div>
-                                <p class="card-text entry-summary text-secondary">
-                                    يلعب القانون التجاري دورًا حيويًا في تنظيم العلاقات بين التجار وحماية حقوقهم
-                                    في مختلف المعاملات التجارية. فهو يمثل الإطار القانوني الذي يضمن الشفافية
-                                    والثقة في التعاملات التجارية، مما يسهم في استقرار الأسواق وتعزيز النمو ...
-                                </p>
-                            </div>
-                            <div class="card-footer border border-top-0 bg-white p-4">
-                                <ul class="list-unstyled d-flex align-items-center justify-content-between m-0">
-                                    <li>
-                                        <p class="text-decoration-none d-flex align-items-center mb-0" href="#">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
-                                                fill="currentColor" class="bi bi-calendar3" viewBox="0 0 18 18">
-                                                <path
-                                                    d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857V3.857z" />
-                                                <path
-                                                    d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
-                                            </svg>
-                                            <span class="ms-2">25 أغسطس 2024</span>
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fa-solid fa-book-open"></i> أقرأ المزيد</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-
-                <!-- articale card -->
-                <div class="col-12 col-xl-4 col-md-6">
-                    <article>
-                        <div class="card border-0">
-                            <figure class="card-img-top m-0 overflow-hidden bsb-overlay-hover">
-                                <div class="img-contain">
-                                    <img class="img-fluid bsb-scale bsb-hover-scale-up" loading="lazy"
-                                        src="{{asset('assets/images/article.jpg')}}" alt="Business">
-                                </div>
-                            </figure>
-                            <div class="card-body border bg-white p-3">
-                                <div class="entry-header mb-3">
-                                    <ul class="entry-meta list-unstyled d-flex mb-2">
-                                        <li>
-                                            <span>قانون تجاري</span>
-                                        </li>
-                                    </ul>
-                                    <h2 class="card-title entry-title mb-0">
-                                        <h2>أهمية القانون التجاري في تنظيم الأعمال التجارية وتعزيز الثقة
-                                            الاقتصادية</h2>
-                                    </h2>
-                                </div>
-                                <p class="card-text entry-summary text-secondary">
-                                    يلعب القانون التجاري دورًا حيويًا في تنظيم العلاقات بين التجار وحماية حقوقهم
-                                    في مختلف المعاملات التجارية. فهو يمثل الإطار القانوني الذي يضمن الشفافية
-                                    والثقة في التعاملات التجارية، مما يسهم في استقرار الأسواق وتعزيز النمو ...
-                                </p>
-                            </div>
-                            <div class="card-footer border border-top-0 bg-white p-4">
-                                <ul class="list-unstyled d-flex align-items-center justify-content-between m-0">
-                                    <li>
-                                        <p class="text-decoration-none d-flex align-items-center mb-0" href="#">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
-                                                fill="currentColor" class="bi bi-calendar3" viewBox="0 0 18 18">
-                                                <path
-                                                    d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857V3.857z" />
-                                                <path
-                                                    d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
-                                            </svg>
-                                            <span class="ms-2">25 أغسطس 2024</span>
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fa-solid fa-book-open"></i> أقرأ المزيد</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-
-                <!-- articale card -->
-                <div class="col-12 col-xl-4 col-md-6">
-                    <article>
-                        <div class="card border-0">
-                            <figure class="card-img-top m-0 overflow-hidden bsb-overlay-hover">
-                                <div class="img-contain">
-                                    <img class="img-fluid bsb-scale bsb-hover-scale-up" loading="lazy"
-                                        src="{{asset('assets/images/article.jpg')}}" alt="Business">
-                                </div>
-                            </figure>
-                            <div class="card-body border bg-white p-3">
-                                <div class="entry-header mb-3">
-                                    <ul class="entry-meta list-unstyled d-flex mb-2">
-                                        <li>
-                                            <span>قانون تجاري</span>
-                                        </li>
-                                    </ul>
-                                    <h2 class="card-title entry-title mb-0">
-                                        <h2>أهمية القانون التجاري في تنظيم الأعمال التجارية وتعزيز الثقة
-                                            الاقتصادية</h2>
-                                    </h2>
-                                </div>
-                                <p class="card-text entry-summary text-secondary">
-                                    يلعب القانون التجاري دورًا حيويًا في تنظيم العلاقات بين التجار وحماية حقوقهم
-                                    في مختلف المعاملات التجارية. فهو يمثل الإطار القانوني الذي يضمن الشفافية
-                                    والثقة في التعاملات التجارية، مما يسهم في استقرار الأسواق وتعزيز النمو ...
-                                </p>
-                            </div>
-                            <div class="card-footer border border-top-0 bg-white p-4">
-                                <ul class="list-unstyled d-flex align-items-center justify-content-between m-0">
-                                    <li>
-                                        <p class="text-decoration-none d-flex align-items-center mb-0" href="#">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
-                                                fill="currentColor" class="bi bi-calendar3" viewBox="0 0 18 18">
-                                                <path
-                                                    d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857V3.857z" />
-                                                <path
-                                                    d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
-                                            </svg>
-                                            <span class="ms-2">25 أغسطس 2024</span>
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fa-solid fa-book-open"></i> أقرأ المزيد</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </article>
-                </div>
+             
             </div>
             <!-- ظهر الديف ده لو المقالات اكتر من 6 -->
             <div class="last-footer text-center mt-4">
                 <p>يمكنك قراءة كل المقالات الخاصة بنا</p>
-                <a href="{{ url('/articals') }}" class="btn main-btn m-auto">كل المقالات</a>
+                <a href="{{ route('guest.articals.index') }}" class="btn main-btn m-auto">كل المقالات</a>
             </div>
         </div>
     </section>
@@ -801,28 +466,31 @@
                 <h2>الأسئلة الشائعة</h2>
             </div>
             <div class="accordion" id="regularAccordionRobots">
-
-                <div class="accordion-item">
-                    <h2 id="regularHeadingFirst" class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#regularCollapseFirst" aria-expanded="false"
-                            aria-controls="regularCollapseFirst">
-                            1. ما هي خدمات شركة رؤية للاستشارات والحوكمة؟
-                        </button>
-                    </h2>
-                    <div id="regularCollapseFirst" class="accordion-collapse collapse"
-                        aria-labelledby="regularHeadingFirst" data-bs-parent="#regularAccordionRobots">
-                        <div class="accordion-body">
-                            شركة رؤية للاستشارات والحوكمة تقدم مجموعة متنوعة من الخدمات القانونية والحكومية، بما في ذلك
-                            الاستشارات القانونية للشركات والأفراد، وتطوير استراتيجيات الحوكمة الفعالة. نحن نساعد عملائنا
-                            في فهم متطلبات الامتثال القانوني وتحسين العمليات الداخلية لضمان الالتزام بالقوانين واللوائح.
-                            بالإضافة إلى ذلك، نقدم حلولاً تقنية تشمل تطوير مواقع إلكترونية للمكاتب القانونية
-                            والمستشارين، مما يتيح لهم إدارة أعمالهم بفعالية عبر الإنترنت. كما نقدم خدمة الحجز الإلكتروني
-                            للمواعيد، مما يسهل على العملاء تحديد المواعيد وإدارتها بكفاءة.
+                @forelse ($questions as $key=>$question)
+                    
+                
+                    <div class="accordion-item">
+                        <h2 id="regularHeading{{$question->id}}" class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#regularCollapse{{$question->id}}" aria-expanded="false"
+                                aria-controls="regularCollapseFirst" data-id="{{$question->id}}">
+                                {{$key+1}}. {{$question->question}}
+                            </button>
+                        </h2>
+                        <div id="regularCollapse{{$question->id}}" class="accordion-collapse collapse"
+                            aria-labelledby="regularHeading{{$question->id}}" data-bs-parent="#regularAccordionRobots" data-id="{{$question->id}}">
+                            <div class="accordion-body">
+                                {{$question->answer}}
+                            </div>
                         </div>
                     </div>
-                </div>
 
+                @empty
+                    <div>
+                        لا يوجد بيانات
+                    </div>
+                @endforelse
+{{--                 
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="regularHeadingSecond">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -970,7 +638,7 @@
                             الالكترونية القانوينة التي من الممكن ان تجلب لك من يبحث عن مثل هذه الامور كما اننا نوفر لك
                             الموقع بدون الحاجة الى شراء استضافة او اسم نطاق (Domain).</div>
                     </div>
-                </div>
+                </div> --}}
 
             </div>
         </div>

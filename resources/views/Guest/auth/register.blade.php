@@ -24,7 +24,7 @@
 <div class="overlay"></div>
     <div class="wrapper my-5">
 
-        <form action="{{route('register.store')}}" method="POST">
+        <form action="{{route('guest.register.store')}}" method="POST">
             @csrf
             <h1>الإشتراك والتسجيل</h1>
             <p>انت الأن على بعد خطوات من إنشاء موقعك الإلكتروني</p>
@@ -109,10 +109,10 @@
 
             <div class="register-link">
                 <p>انت تملك حساب بالفعل<br>
-                    <a href="{{ route('login.view') }}">تسجيل الدخول</a>
+                    <a href="{{ route('guest.login.view') }}">تسجيل الدخول</a>
                 </p>
             </div>
-            <a href="{{ route('home.view') }}" class="d-block text-center">العودة للصفحة الرئيسية</a>
+            <a href="{{ route('guest.home.view') }}" class="d-block text-center">العودة للصفحة الرئيسية</a>
         </form>
 
     </div>

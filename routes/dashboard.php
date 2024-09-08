@@ -5,9 +5,12 @@ use App\Http\Controllers\Ceo\Dashboard\Article\ArticleController;
 use App\Http\Controllers\Ceo\Dashboard\Consaltation\ConsaltationController;
 use App\Http\Controllers\Ceo\Dashboard\Service\ServiceController;
 use App\Http\Controllers\Ceo\Dashboard\Contact\ContactController;
+use App\Http\Controllers\Ceo\Dashboard\Customer\CustomerController;
 use App\Http\Controllers\Ceo\Dashboard\Datetime\DateTimeController;
 use App\Http\Controllers\Ceo\Dashboard\Policy\PolicyController;
+use App\Http\Controllers\Ceo\Dashboard\Question\QuestionController;
 use App\Http\Controllers\Ceo\Dashboard\Setting\SettingController;
+use App\Http\Controllers\Ceo\Dashboard\Subscriber\SubscriberController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -42,37 +45,37 @@ Route::prefix('dashboard')->group(function(){
 
 
 //Subscribers
-Route::get('Subscriber',function(){
-    return view('Dashboard.Subscriber.index');
-})->name('Subscriber');
+// Route::get('Subscriber',function(){
+//     return view('Dashboard.Subscriber.index');
+// })->name('Subscriber');
 
 
 
 
 //questions
-Route::get('question',function(){
-    return view('Dashboard.Question.index');
-})->name('question');
-Route::get('question/create',function(){
-    return view('Dashboard.Question.create');
-})->name('question.create');
-Route::get('question/edit',function(){
-    return view('Dashboard.Question.edit');
-})->name('question.edit');
+// Route::get('question',function(){
+//     return view('Dashboard.Question.index');
+// })->name('question');
+// Route::get('question/create',function(){
+//     return view('Dashboard.Question.create');
+// })->name('question.create');
+// Route::get('question/edit',function(){
+//     return view('Dashboard.Question.edit');
+// })->name('question.edit');
 
 
 
 
 // top clients
-Route::get('topclient',function(){
-    return view('Dashboard.Topclient.index');
-})->name('topclient');
-Route::get('topclient/create',function(){
-    return view('Dashboard.Topclient.create');
-})->name('topclient.create');
-Route::get('topclient/edit',function(){
-    return view('Dashboard.Topclient.edit');
-})->name('topclient.edit');
+// Route::get('topclient',function(){
+//     return view('Dashboard.Topclient.index');
+// })->name('topclient');
+// Route::get('topclient/create',function(){
+//     return view('Dashboard.Topclient.create');
+// })->name('topclient.create');
+// Route::get('topclient/edit',function(){
+//     return view('Dashboard.Topclient.edit');
+// })->name('topclient.edit');
 
 
 
@@ -153,6 +156,12 @@ Route::resource('contacts',ContactController::class);
 Route::resource('datetimes',DateTimeController::class);
 //*******************************************************************************************/
 Route::resource('policies',PolicyController::class);
+//*******************************************************************************************/
+Route::resource('subscribers',SubscriberController::class);
+//*******************************************************************************************/
+Route::resource('questions',QuestionController::class);
+//*******************************************************************************************/
+Route::resource('customers',CustomerController::class);
 //*******************************************************************************************/
 
 });

@@ -50,8 +50,8 @@ class ArticleController extends Controller
      */
     public function show(string $id)
     {
-        $article = Article::with('media')->find($id);
-        return $article;
+        // $article = Article::with('media')->find($id);
+        // return $article;
     }
 
     /**
