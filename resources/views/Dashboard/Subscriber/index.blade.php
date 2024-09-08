@@ -11,7 +11,7 @@
                         <tr class="row-table">
                             <th><i class="fa-solid fa-arrow-down-wide-short"></i></th>
                             <th>الأسم</th>
-                            <th>الشعار</th>
+                            {{-- <th>الشعار</th> --}}
                             <th>اسم الشركة</th>
                             <th>اسم الموقع</th>
                             <th>رقم الهاتف</th>
@@ -23,7 +23,9 @@
                             <tr class="row-table">
                                 <td>{{$key+1}}</td>
                                 <td>{{$subscriber->name}}</td>
-                                <td class="table-logo"><img src="{{asset('assets/images/logos/logo4.png')}}" alt=""></td>
+                                {{-- <td class="table-logo">
+                                    <img src="{{asset('assets/images/logos/logo4.png')}}" alt="">
+                                </td> --}}
                                 <td class="message-table">{{$subscriber->company_name_ar}}</td>
                             <td><a href="">{{$subscriber->domain}}</a></td>
                                 <td>{{$subscriber->mobile}}</td>
@@ -31,7 +33,7 @@
                             </tr>
                         @empty
                             <tr>
-                                <td colspan="7">لا يوجد بيانات</td>
+                                <td colspan="6">لا يوجد بيانات</td>
                             </tr>
                         @endforelse
                    

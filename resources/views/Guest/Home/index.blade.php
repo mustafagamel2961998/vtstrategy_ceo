@@ -300,44 +300,35 @@
         </div>
         <div class="container test-slider position-relative">
             <div class="owl-carousel">
+
+               @foreach ($rates as $rate)
                 <div class="test-card h-100">
+                        
+                 
                     <div class="card-body h-100">
                         <div class="icon">
                             <i class="fa-solid fa-quote-right"></i>
                         </div>
-                        <p class="card-text">لقد ساعدنا فريق الاستشارات القانونية في الحصول على نتائج مذهلة لعملائنا.
-                            كما أن تصميم الموقع يعكس الاحترافية والتميز، مما عزز من تواجدنا الرقمي بشكل كبير.</p>
+                        <p class="card-text">
+                            {{$rate->comment}}
+                        </p>
                         <div class="d-flex align-items-center">
                             <div class="image">
-                                <img src="{{asset('assets/images/person2.jpg')}}" alt="person name">
+                                <img src="{{$rate->getFirstMediaUrl('rate')}}" alt="person name">
                             </div>
                             <div>
-                                <h2 class="card-title">أحمد سعيد</h2>
-                                <p class="mb-0">مستشار قانوني</p>
+                                <h2 class="card-title"> 
+                                    {{$rate->name}}
+                                </h2>
+                                <p class="mb-0"> 
+                                    {{$rate->job_title}}
+                                </p>
                             </div>
                         </div>
 
                     </div>
                 </div>
-                <div class="test-card h-100">
-                    <div class="card-body h-100">
-                        <div class="icon">
-                            <i class="fa-solid fa-quote-right"></i>
-                        </div>
-                        <p class="card-text">الدعم القانوني الذي تلقيناه كان دقيقاً واحترافياً. تصميم الموقع الجديد
-                            لمكتبنا ساعدنا في الوصول لعملاء جدد، وأصبحنا نحظى بثقة أكبر من العملاء.</p>
-                        <div class="d-flex align-items-center">
-                            <div class="image">
-                                <img src="{{asset('assets/images/person1.jpg')}}" alt="person name">
-                            </div>
-                            <div>
-                                <h2 class="card-title">سارة عبد الرحمن</h2>
-                                <p class="mb-0">محامية</p>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
+            @endforeach 
 
             </div>
         </div>

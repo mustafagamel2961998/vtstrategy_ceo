@@ -61,8 +61,8 @@
                 <li class="{{ Route::is('datetimes.*') ? 'active' : '' }}">
                     <a href="{{ route('datetimes.index') }}"><i class="fa-solid fa-calendar-plus"></i>إضافة مواعيد استشارات</a>
                 </li>
-                <li class="{{ Request::is('dashboard/rate*') ? 'active' : '' }}">
-                    <a href="{{ route('rate') }}"><i class="fa-regular fa-star-half-stroke"></i>إضافة آراء عملاء</a>
+                <li class="{{ Route::is('rates.*') ? 'active' : '' }}">
+                    <a href="{{ route('rates.index') }}"><i class="fa-regular fa-star-half-stroke"></i>إضافة آراء عملاء</a>
                 </li>
                 <li class="{{ Route::is('policies.*') ? 'active' : '' }}">
                     <a href="{{ route('policies.index') }}"><i class="fa-solid fa-user-lock"></i>السياسة والخصوصية</a>

@@ -7,6 +7,7 @@ use App\Models\Ceo\Article;
 use App\Models\Ceo\Counterofnumber;
 use App\Models\Ceo\Customer;
 use App\Models\Ceo\Question;
+use App\Models\Ceo\Rate;
 use App\Models\Ceo\Service;
 use Illuminate\Http\Request;
 
@@ -22,7 +23,8 @@ class HomeController extends Controller
         $latest_six_articles = Article::where('status','active')->with('media')->latest()->take(6)->get();
         $latest_six_customers = Customer::where('status','active')->latest()->take(6)->get(); 
         $questions = Question::where('status','active')->latest()->get();
-        return view('Guest.Home.index',compact('services','counter_of_numbers','latest_six_articles','latest_six_customers','questions'));
+        $rates = Rate::where('status','active')->with('media')->latest()->get();
+        return view('Guest.Home.index',compact('services','counter_of_numbers','latest_six_articles','latest_six_customers','questions','rates'));
     }
 
     /**

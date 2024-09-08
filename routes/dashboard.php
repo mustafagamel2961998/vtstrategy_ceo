@@ -9,6 +9,7 @@ use App\Http\Controllers\Ceo\Dashboard\Customer\CustomerController;
 use App\Http\Controllers\Ceo\Dashboard\Datetime\DateTimeController;
 use App\Http\Controllers\Ceo\Dashboard\Policy\PolicyController;
 use App\Http\Controllers\Ceo\Dashboard\Question\QuestionController;
+use App\Http\Controllers\Ceo\Dashboard\Rate\RateController;
 use App\Http\Controllers\Ceo\Dashboard\Setting\SettingController;
 use App\Http\Controllers\Ceo\Dashboard\Subscriber\SubscriberController;
 use Illuminate\Support\Facades\Route;
@@ -162,6 +163,8 @@ Route::resource('subscribers',SubscriberController::class);
 Route::resource('questions',QuestionController::class);
 //*******************************************************************************************/
 Route::resource('customers',CustomerController::class);
+//*******************************************************************************************/
+Route::resource('rates',RateController::class);
 //*******************************************************************************************/
 
 });
