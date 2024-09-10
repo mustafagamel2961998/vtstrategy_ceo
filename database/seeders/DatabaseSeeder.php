@@ -9,13 +9,14 @@ use App\Models\Admin;
 use App\Models\Basic;
 use App\Models\Ceo\Counterofnumber;
 use App\Models\Ceo\Policy;
+use App\Models\Ceo\Returnpolicy;
 use App\Models\Ceo\Setting;
 use App\Models\ConsultationMsg;
 use App\Models\Customer;
 use App\Models\Governance;
 use App\Models\Privacy;
 use App\Models\Privreturn;
-use App\Models\Term;
+use App\Models\Ceo\Term;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 
@@ -50,10 +51,21 @@ class DatabaseSeeder extends Seeder
 
         // ]);
 
-        $policy = Policy::create([
-            'content'=>'السياسة والخصوصية'
+        // $policy = Policy::create([
+        //     'content'=>'السياسة والخصوصية'
+        // ]);
+        // $policy->copyMedia(public_path('assets/images/default/policy/policy.jpg'))->toMediaCollection('policy');
+
+        $term = Term::create([
+            'content'=>'الشروط والاحكام'
         ]);
-        $policy->copyMedia(public_path('assets/images/default/policy/policy.jpg'))->toMediaCollection('policy');
+        $term->copyMedia(public_path('assets/images/default/term/term.png'))->toMediaCollection('term');
+
+
+        $return = Returnpolicy::create([
+            'content'=>'سياسة الاسترجاع',
+        ]);
+        $return->copyMedia(public_path('assets/images/default/return/return.jpg'))->toMediaCollection('return');
 
     }
 }

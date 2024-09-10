@@ -65,7 +65,7 @@ class RegisterController extends Controller
             'domain'=>$databaseProducationNameLowercase,
             'database_name' => $databaseProducationNameLowercase,
             'otp'=>$randomOtp,
-            'start_subscription'=>$currentDate,
+            'start_subscription'=>Carbon::now(),
             'end_subscription'=>$newDate,
         ]);
         
@@ -88,6 +88,7 @@ class RegisterController extends Controller
            
            DB::purge('vts');
            Config::set('database.connections.mysql.database', $databaseProducationNameLowercase);
+           
            DB::connection('mysql')->reconnect();
            DB::setDefaultConnection('mysql');
         

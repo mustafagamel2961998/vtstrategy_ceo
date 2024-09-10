@@ -33,13 +33,13 @@ class TenantDefaultInformation extends Seeder
             'linkedin'=>null,
             'twitter'=>null,
         ]);
-        $basicData->addMediaFromUrl('https://i.ibb.co/YRmsnGF/Newslo-en.png')
-                    ->usingName('Content images')
-                    ->toMediaCollection('logo');
+        // $basicData->addMediaFromUrl('https://i.ibb.co/YRmsnGF/Newslo-en.png')
+        //             ->usingName('Content images')
+        //             ->toMediaCollection('logo');
 
-        $basicData->addMediaFromUrl('https://i.ibb.co/gMJmXSn/new.png')
-                    ->usingName('Content images')
-                    ->toMediaCollection('icon');            
+        // $basicData->addMediaFromUrl('https://i.ibb.co/gMJmXSn/new.png')
+        //             ->usingName('Content images')
+        //             ->toMediaCollection('icon');            
  
         //**************************************************************** */
         Governance::create([
@@ -59,9 +59,9 @@ class TenantDefaultInformation extends Seeder
                 'short_text'=>'رؤية الأشياء للاستشارات الاستراتيجية والحوكمة',
                 'content'=>'رؤية الأشياء للاستشارات الاستراتيجية والحوكمة هي شركة استشارية رائدة في المملكة العربية السعودية، تأسست عام 2023، وتقدم خدمات لمساعدة الشركات في تطوير الاستراتيجية والحوكمة لقيادة الشركات أو الادارات العليا. تقع الشركة في مدينة جدة، وتضم فريقًا من المستشارين ذوي الخبرة والمهارات المتخصصة في مجال الاستشارات الاستراتيجية والحوكمة و الالتزام.'
             ]);
-       $about->addMediaFromUrl('https://i.ibb.co/ZN6J0HC/enghattan.png')
-             ->usingName('About image')
-             ->toMediaCollection('about');  
+    //    $about->addMediaFromUrl('https://i.ibb.co/ZN6J0HC/enghattan.png')
+    //          ->usingName('About image')
+    //          ->toMediaCollection('about');  
         //**************************************************************** */
         Privacy::create([
             'content'=>'ما هي سياسة الخصوصية الخاصة بالشركة؟',

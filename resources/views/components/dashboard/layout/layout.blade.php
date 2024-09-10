@@ -61,20 +61,30 @@
                 <li class="{{ Route::is('datetimes.*') ? 'active' : '' }}">
                     <a href="{{ route('datetimes.index') }}"><i class="fa-solid fa-calendar-plus"></i>إضافة مواعيد استشارات</a>
                 </li>
+
                 <li class="{{ Route::is('rates.*') ? 'active' : '' }}">
                     <a href="{{ route('rates.index') }}"><i class="fa-regular fa-star-half-stroke"></i>إضافة آراء عملاء</a>
                 </li>
+
                 <li class="{{ Route::is('policies.*') ? 'active' : '' }}">
                     <a href="{{ route('policies.index') }}"><i class="fa-solid fa-user-lock"></i>السياسة والخصوصية</a>
                 </li>
-                <li class="{{ Request::is('dashboard/TermsandConditions*') ? 'active' : '' }}">
-                    <a href="{{ route('TermsandConditions') }}"><i class="fa-solid fa-scale-unbalanced-flip"></i>الشروط والأحكام</a>
+
+                <li class="{{ Route::is('terms.*') ? 'active' : '' }}">
+                    <a href="{{ route('terms.index') }}"><i class="fa-solid fa-scale-unbalanced-flip"></i>الشروط والأحكام</a>
                 </li>
-                <li class="{{ Request::is('dashboard/Returnpolicy*') ? 'active' : '' }}">
-                    <a href="{{ route('Returnpolicy') }}"><i class="fa-solid fa-handshake"></i>سياسة الإسترجاع</a>
+
+                <li class="{{ Route::is('returns*') ? 'active' : '' }}">
+                    <a href="{{ route('returns.index') }}"><i class="fa-solid fa-handshake"></i>سياسة الإسترجاع</a>
                 </li>
+                
                 <li class="mt-auto">
-                    <a href="#"><i class="fa-solid fa-right-from-bracket"></i>تسجيل خروج</a>
+                    <form action="{{route('auth.logout')}}" method="POST">
+                        @csrf
+                        <button type="submit">
+                            <i class="fa-solid fa-right-from-bracket"></i>تسجيل خروج
+                        </button>
+                    </form>
                 </li>
             </ul>
         </aside>

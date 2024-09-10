@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Ceo\Dashboard\Home\HomeController;
 use App\Http\Controllers\Ceo\Dashboard\Article\ArticleController;
+use App\Http\Controllers\Ceo\Dashboard\Auth\AuthController;
 use App\Http\Controllers\Ceo\Dashboard\Consaltation\ConsaltationController;
 use App\Http\Controllers\Ceo\Dashboard\Service\ServiceController;
 use App\Http\Controllers\Ceo\Dashboard\Contact\ContactController;
@@ -10,8 +11,10 @@ use App\Http\Controllers\Ceo\Dashboard\Datetime\DateTimeController;
 use App\Http\Controllers\Ceo\Dashboard\Policy\PolicyController;
 use App\Http\Controllers\Ceo\Dashboard\Question\QuestionController;
 use App\Http\Controllers\Ceo\Dashboard\Rate\RateController;
+use App\Http\Controllers\Ceo\Dashboard\Return\ReturnController;
 use App\Http\Controllers\Ceo\Dashboard\Setting\SettingController;
 use App\Http\Controllers\Ceo\Dashboard\Subscriber\SubscriberController;
+use App\Http\Controllers\Ceo\Dashboard\Term\TermController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -91,15 +94,15 @@ Route::prefix('dashboard')->group(function(){
 
 
 // rate
-Route::get('rate',function(){
-    return view('Dashboard.Rate.index');
-})->name('rate');
-Route::get('rate/create',function(){
-    return view('Dashboard.Rate.create');
-})->name('rate.create');
-Route::get('rate/edit',function(){
-    return view('Dashboard.Rate.edit');
-})->name('rate.edit');
+// Route::get('rate',function(){
+//     return view('Dashboard.Rate.index');
+// })->name('rate');
+// Route::get('rate/create',function(){
+//     return view('Dashboard.Rate.create');
+// })->name('rate.create');
+// Route::get('rate/edit',function(){
+//     return view('Dashboard.Rate.edit');
+// })->name('rate.edit');
 
 
 //السياسة والخصوصية
@@ -107,13 +110,13 @@ Route::get('rate/edit',function(){
 //     return view('Dashboard.Policy.index');
 // })->name('Policyandprivacy');
 //الشروط والأحكام
-Route::get('TermsandConditions',function(){
-    return view('Dashboard.Term.index');
-})->name('TermsandConditions');
+// Route::get('TermsandConditions',function(){
+//     return view('Dashboard.Term.index');
+// })->name('TermsandConditions');
 //سياسة الإسترجاع
-Route::get('Returnpolicy',function(){
-    return view('Dashboard.Return.index');
-})->name('Returnpolicy');
+// Route::get('Returnpolicy',function(){
+//     return view('Dashboard.Return.index');
+// })->name('Returnpolicy');
 
 
 
@@ -129,7 +132,10 @@ Route::get('Returnpolicy',function(){
 
 
 
-
+Route::get('auth',[AuthController::class,'index'])->name('auth.index');
+Route::post('auth',[AuthController::class,'login'])->name('auth.login');
+Route::post('logout',[AuthController::class,'logout'])->name('auth.logout');
+//*******************************************************************************************/
 Route::resource('homes',HomeController::class);
 //*******************************************************************************************/
 Route::resource('messages', ContactController::class); /// == contacts 
@@ -165,6 +171,11 @@ Route::resource('questions',QuestionController::class);
 Route::resource('customers',CustomerController::class);
 //*******************************************************************************************/
 Route::resource('rates',RateController::class);
+//*******************************************************************************************/
+Route::resource('terms',TermController::class);
+//*******************************************************************************************/
+Route::resource('returns',ReturnController::class);
+
 //*******************************************************************************************/
 
 });

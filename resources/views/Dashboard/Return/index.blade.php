@@ -7,20 +7,24 @@
             </div>
 
             
-            <form action="">
+            <form action="{{route('returns.update',$return->id)}}" method="POST" enctype="multipart/form-data">
+                @csrf
+                @method('PUT')
                 <div class="row g-3">
                     <div class="col-12">
                          <!-- الصورة لازمة فى الصفحة والصورة دي ال defult -->
-                         <img src="{{asset('assets/images/return.jpg')}}" class="img-prev" alt="">
-                        <label for="mainImg" class="text-center d-block  cursor-pointer mt-1">تغيير صورة الرئيسية</label>
-                        <input type="file" id="mainImg" accept="image/*" class="form-control" hidden>
+                         <label for="mainImg" class="text-center d-block  cursor-pointer mt-1">
+                             <img src="{{$return->getFirstMediaUrl('return')}}" class="img-prev" alt="">
+                             تغيير صورة الرئيسية
+                        </label>
+                        <input type="file" id="mainImg" name="return"  accept="image/*" class="form-control" hidden>
                     </div>
 
                     <div class="col-12">
 
                         <label for="editor">محتوي الصفحة</label>
 
-                        <textarea id="editor"></textarea>
+                        <textarea id="editor" name="content">{{old('content',$return->content)}}</textarea>
                         <script>
                         const editor = Jodit.make("#editor", {
                             "useSearch": false,
@@ -33,7 +37,7 @@
                         </script>
                     </div>
                     <div class="col-12">
-                        <button class="btn main-btn">حفظ</button>
+                        <button type="submit" class="btn main-btn">حفظ</button>
                     </div>
                 </div>
             </form>

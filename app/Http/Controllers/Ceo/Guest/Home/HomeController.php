@@ -10,6 +10,7 @@ use App\Models\Ceo\Question;
 use App\Models\Ceo\Rate;
 use App\Models\Ceo\Service;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
