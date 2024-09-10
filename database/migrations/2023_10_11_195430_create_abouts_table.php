@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('short_text');
             $table->text('content');
+            $table->enum('media_status',[0,1])->default(0);
             $table->timestamps();
         });
     }
