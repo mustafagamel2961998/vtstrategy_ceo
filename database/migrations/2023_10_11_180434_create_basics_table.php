@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('snapchat')->nullable();
             $table->string('linkedin')->nullable();
             $table->string('twitter')->nullable();
+            $table->enum('media_status',[0,1])->default(0);
 
             $table->timestamps();
         });

@@ -17,6 +17,7 @@ class About extends Model implements HasMedia
     protected $fillable  = [
         'short_text',
         'content',
+        'media_status',
     ];
 
 
@@ -25,9 +26,7 @@ class About extends Model implements HasMedia
     public function registerMediaConversions(Media $media = null): void
     {
        
-        $this->addMediaCollection('about')
-             ->useFallbackUrl('https://www12.0zz0.com/2023/10/12/15/651893907.png')
-             ->useDisk('about');
+        $this->addMediaCollection('about');
              
     }
 }

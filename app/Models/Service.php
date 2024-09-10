@@ -35,9 +35,7 @@ class Service extends Model implements HasMedia
     public function registerMediaConversions(Media $media = null): void
     {
        
-        $this->addMediaCollection('service')
-             ->useFallbackUrl('https://www12.0zz0.com/2023/10/12/15/651893907.png')
-             ->useDisk('service');
+        $this->addMediaCollection('service');
              
     }
 }

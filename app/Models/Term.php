@@ -12,5 +12,4 @@ class Term extends Model
     protected $fillable  = [
         'content',
     ];
-    
 }

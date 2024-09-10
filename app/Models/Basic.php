@@ -22,7 +22,8 @@ class Basic extends Model implements HasMedia
         'instagram',
         'snapchat',
         'linkedin',
-        'twitter'
+        'twitter',
+        'media_status'
     ];
 
 
