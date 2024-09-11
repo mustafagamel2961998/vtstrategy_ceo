@@ -43,7 +43,7 @@ class LoginController extends Controller
         }
         Auth::attempt(['email'=>$request->email,'password'=>$request->password]);
    
-        return redirect()->away('https://' . $tenant->domain . '.vtstrategy.org/admin/index');
+        return redirect()->away('https://' . $tenant->domain . '.localhost:8000/admin/index');
     }
 
 }

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Ceo\Article;
 use App\Models\Ceo\Counterofnumber;
 use App\Models\Ceo\Customer;
+use App\Models\Ceo\Datetime;
 use App\Models\Ceo\Question;
 use App\Models\Ceo\Rate;
 use App\Models\Ceo\Service;
@@ -19,13 +20,19 @@ class HomeController extends Controller
      */
     public function index()
     {
+
+
         $services = Service::where('status','active')->latest()->take(6)->get();
         $counter_of_numbers = Counterofnumber::query()->first();
         $latest_six_articles = Article::where('status','active')->with('media')->latest()->take(6)->get();
         $latest_six_customers = Customer::where('status','active')->latest()->take(6)->get(); 
         $questions = Question::where('status','active')->latest()->get();
         $rates = Rate::where('status','active')->with('media')->latest()->get();
-        return view('Guest.Home.index',compact('services','counter_of_numbers','latest_six_articles','latest_six_customers','questions','rates'));
+
+        
+        $servicesConsaltaion = Service::latest()->get();
+        $datetimesConsaltaion = Datetime::latest()->get();
+        return view('Guest.Home.index',compact('services','counter_of_numbers','latest_six_articles','latest_six_customers','questions','rates','servicesConsaltaion','datetimesConsaltaion'));
     }
 
     /**

@@ -38,8 +38,15 @@ class ArticleRequest extends FormRequest
             'service_id'=>['required','exists:services,id'],
             'title'=>['required','string'],
             'content'=>['required','string'],
-            'article'=>['required','mimes:png,jpg,jpeg']
+            'article'=>['nullable','mimes:png,jpg,jpeg']
         ];
+    }
+
+    public function withValidator($validator)
+    {
+        $validator->sometimes('article', 'required', function ($input) {
+            return !$this->route('article'); // Adjust this based on your route parameter
+        });
     }
    
 }

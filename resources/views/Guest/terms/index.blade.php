@@ -34,7 +34,7 @@
         <div class="container">
             <h3 class="h2">الشروط والأحكام</h3>
             <p class="mb-0">
-                محتوي الشروط والأحكام هنا 
+                {!! $term->content !!}
             </p>
         </div>
      </div>

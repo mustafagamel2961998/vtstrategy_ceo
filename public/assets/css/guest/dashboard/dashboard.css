@@ -124,10 +124,29 @@ a:focus {
     align-items: center;
 
 }
+/* .sidebar-nav>li form{
+    width: 100%;
+}
+.sidebar-nav>li form button{
+    background-color: transparent;
+    border: none;
+    text-decoration: none;
+    color: #757575;
+    font-weight: 400;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+.sidebar-nav>li form button svg {
+    color: #EDB46E;
+    font-size: 24px;
+    padding: 0 15px;
+}
 
 .sidebar-nav>li a svg {
     color: #EDB46E;
-}
+} */
 
 .sidebar-nav>li>a:hover,
 .sidebar-nav>li.active>a,

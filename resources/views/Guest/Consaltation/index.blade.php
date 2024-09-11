@@ -133,7 +133,7 @@
 
                             <div class="col-md-6">
                                 <select name="service_id" id="service_id" class="form-control">
-                                    <option disabled>القسم الخاص بالاستشارة</option>
+                                    <option disabled>الاقسام الخاص بالاستشارة</option>
                                     @foreach ($services as $service)
                                         <option value="{{$service->id}}" @if(old('service_id') == $service->id)  checked @endif> 
                                             {{$service->title}}

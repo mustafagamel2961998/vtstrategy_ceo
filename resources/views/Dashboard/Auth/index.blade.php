@@ -25,7 +25,7 @@
     <div class="wrapper my-5">
         <h1>تسجيل الدخول - لوحة التـحكم</h1>
         @if(Session::has('faild'))
-        <p>{{Session::get('faild')}}</p>
+            <p>{{Session::get('faild')}}</p>
         @endif
         <form action="{{route('auth.login')}}" method="POST">
             @csrf

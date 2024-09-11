@@ -6,6 +6,9 @@ use App\Http\Controllers\Ceo\Guest\Auth\RegisterController;
 use App\Http\Controllers\Ceo\Guest\Consaltation\ConsaltationController;
 use App\Http\Controllers\Ceo\Guest\Contact\ContactController;
 use App\Http\Controllers\Ceo\Guest\Home\HomeController;
+use App\Http\Controllers\Ceo\Guest\Policy\PolicyController;
+use App\Http\Controllers\Ceo\Guest\Return\ReturnController;
+use App\Http\Controllers\Ceo\Guest\Term\TermController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -80,16 +83,10 @@ Route::get('/resetPassword', function () {
 
 
 
-Route::get('/policyandprivacy', function () {
-    return view('Guest.policies.index');
-})->name('policyandprivacy');
+Route::get('/policyandprivacy',[PolicyController::class,'index'])->name('policy');
 
-Route::get('/termsandconditions', function () {
-    return view('Guest.terms.index');
-})->name('termsandconditions');
+Route::get('/termsandconditions',[TermController::class,'index'])->name('term');
 
-Route::get('/returnpolicy', function () {
-    return view('Guest.return.index');
-})->name('returnpolicy');
+Route::get('/returnpolicy', [ReturnController::class,'index'])->name('return');
 
 });

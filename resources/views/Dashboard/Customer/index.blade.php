@@ -7,31 +7,34 @@
         </div>
 
         <div class="row g-3 align-items-center">
-            @foreach ($customers as $customer)
+            @forelse ($customers as $customer)
                 
-            <div class="col-6 col-md-4 col-lg-3 col-xl-2  align-items-center">
-                <div class="logo p-4 h-100 d-flex flex-column align-items-center">
-                    <a href="{{$customer->website}}" class="mb-2"><img src="{{$customer->getFirstMediaUrl('customer')}}" class="w-100" alt="">
-                    </a>
-                    <div class="d-flex align-items-center">
-
-                        <a href="{{route('customers.edit',$customer->id)}}" class="btn btn-md btn-outline-warning d-flex align-items-center me-2">
-                            <i class="fa-solid fa-pen-nib"></i>
+                <div class="col-6 col-md-4 col-lg-3 col-xl-2  align-items-center">
+                    <div class="logo p-4 h-100 d-flex flex-column align-items-center">
+                        <a href="{{$customer->website}}" class="mb-2"><img src="{{$customer->getFirstMediaUrl('customer')}}" class="w-100" alt="">
                         </a>
+                        <div class="d-flex align-items-center">
 
-                        <form action="{{route('customers.destroy',$customer->id)}}" method="POST">
-                            @csrf
-                            @method('DELETE')
-                         
-                            <button type="submit" class="btn btn-md btn-outline-danger">
-                                <i  class="fa-solid fa-trash"></i>
-                            </button>
-                        </form>
+                            <a href="{{route('customers.edit',$customer->id)}}" class="btn btn-md btn-outline-warning d-flex align-items-center me-2">
+                                <i class="fa-solid fa-pen-nib"></i>
+                            </a>
+
+                            <form action="{{route('customers.destroy',$customer->id)}}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                            
+                                <button type="submit" class="btn btn-md btn-outline-danger">
+                                    <i  class="fa-solid fa-trash"></i>
+                                </button>
+                            </form>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            @endforeach
+            @empty
+                <p>
+                    لا يوجد بيانات
+                </p>
+            @endforelse
 
         </div>
 

@@ -10,7 +10,7 @@
             </div>
         <div class="row g-4">
             <!-- articale card -->
-            @foreach ($articles as $article )
+            @forelse ($articles as $article )
                 <div class="col-12 col-xl-4 col-md-6">
                     <article class="">
                         <div class="card border-0 bg-light">
@@ -47,7 +47,10 @@
                                                 <path
                                                     d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
                                             </svg>
-                                            <span class="ms-2">25 أغسطس 2024</span>
+                                            <span class="ms-2">
+                                                {{$article->created_at->locale('ar')->translatedFormat('Y-M-d')}}
+                                            </span>
+                                            {{-- <span class="ms-2">25 أغسطس 2024</span> --}}
                                         </p>
                                     </li>
                                     <li class="d-flex align-items-center">
@@ -68,7 +71,11 @@
                         </div>
                     </article>
                 </div>
-            @endforeach
+            @empty
+                <p>
+                    لا يوجد بيانات
+                </p>
+            @endforelse
 
         </div>
     </div>

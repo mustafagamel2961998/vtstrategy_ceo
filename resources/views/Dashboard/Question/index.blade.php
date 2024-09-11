@@ -11,29 +11,29 @@
             <div class="row g-3">
 
                 @forelse ($questions as $question)
-                <div class="col-12 question p-3">
-                    <div class="d-flex align-items-center justify-content-between">
-                        <p class="m-0 h5 fw-bold">
-                            {{$question->question}}
-                        </p>
-                        <div class="d-flex align-items-center">
-                            <a href="{{route('questions.edit',$question->id)}}" class="btn btn-md btn-outline-warning d-flex align-items-center me-2"><i
-                                    class="fa-solid fa-pen-nib"></i></a>
-                                    
-                                <form action="{{route('questions.destroy',$question->id)}}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button class="btn btn-md btn-outline-danger">
-                                        <i class="fa-solid fa-trash"></i>
-                                    </button>
-                                </form>
+                    <div class="col-12 question p-3">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <p class="m-0 h5 fw-bold">
+                                {{$question->question}}
+                            </p>
+                            <div class="d-flex align-items-center">
+                                <a href="{{route('questions.edit',$question->id)}}" class="btn btn-md btn-outline-warning d-flex align-items-center me-2"><i
+                                        class="fa-solid fa-pen-nib"></i></a>
+                                        
+                                    <form action="{{route('questions.destroy',$question->id)}}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button class="btn btn-md btn-outline-danger">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </button>
+                                    </form>
+                            </div>
                         </div>
+                        <hr>
+                        <p class="m-0 text-justify">
+                            {{$question->answer}}
+                        </p>
                     </div>
-                    <hr>
-                    <p class="m-0 text-justify">
-                        {{$question->answer}}</p>
-                </div>
-
                 @empty
                     <div>لا يوجد بيانات</div>
                 @endforelse

@@ -27,57 +27,57 @@
                     </thead>
                     <tbody>
                         @forelse ($consaltations as $key=> $consaltation)
-                        <tr class="row-table">
-                            <td>{{$key+1}}</td>
-                            <td>{{$consaltation->name}}</td>
-                            <td>{{$consaltation->email}}</td>
-                            <td>{{$consaltation->phone}}</td>
-                            <td>{{$consaltation->whatsapp}}</td>
-                            <td>{{$consaltation->service->title ?? 'غير محدد'}}</td>
-                            <td>
-                                {{$consaltation->date_time->format('Y-m-d H:i a')}}
-                            </td>
-                            <td class="message-table">
-                                {{$consaltation->note}}
-                            </td>
-                            <td>
-                                @if($consaltation->status =='success')
-                                  ناجحه
-                                @else
-                                    <form action="{{route('consaltaions.update',$consaltation->id)}}" method="POST">
+                            <tr class="row-table">
+                                <td>{{$key+1}}</td>
+                                <td>{{$consaltation->name}}</td>
+                                <td>{{$consaltation->email}}</td>
+                                <td>{{$consaltation->phone}}</td>
+                                <td>{{$consaltation->whatsapp}}</td>
+                                <td>{{$consaltation->service->title ?? 'غير محدد'}}</td>
+                                <td>
+                                    {{$consaltation->date_time->format('Y-m-d H:i a')}}
+                                </td>
+                                <td class="message-table">
+                                    {{$consaltation->note}}
+                                </td>
+                                <td>
+                                    @if($consaltation->status =='success')
+                                    ناجحه
+                                    @else
+                                        <form action="{{route('consaltaions.update',$consaltation->id)}}" method="POST">
+                                            @csrf
+                                            @method('PUT')
+                                            <button type="submit" class="btn btn-sm btn-outline-success d-flex align-items-center m-auto"><i
+                                                class="fa-solid fa-check-double"></i>
+                                            </button>
+                                        </form>
+                                    @endif
+                                </td>
+                                <td>
+                                    @if($consaltation->status =='success')
+                                    ناجحه   
+                                    @elseif($consaltation->status=='postponed')
+                                    تم التأجيل
+                                    @else
+                                        <form action="{{route('consaltaions.postponed',$consaltation->id)}}" method="POST">
+                                            @csrf
+                                            @method('PUT')
+                                            <button type="submit" class="btn btn-sm btn-outline-warning d-flex align-items-center m-auto">
+                                                <i class="fa-solid fa-clock-rotate-left"></i>
+                                            </button>
+                                        </form>
+                                    @endif
+                                </td>
+                                <td>
+                                    <form action="{{route('consaltaions.destroy',$consaltation->id)}}" method="POST">
                                         @csrf
-                                        @method('PUT')
-                                        <button type="submit" class="btn btn-sm btn-outline-success d-flex align-items-center m-auto"><i
-                                            class="fa-solid fa-check-double"></i>
+                                        @method('DELETE')
+                                        <button  type="submit" class="btn btn-sm btn-outline-danger d-flex align-items-center m-auto">
+                                            <i class="fa-solid fa-trash"></i>
                                         </button>
                                     </form>
-                                 @endif
-                             </td>
-                            <td>
-                                @if($consaltation->status =='success')
-                                ناجحه   
-                                @elseif($consaltation->status=='postponed')
-                                تم التأجيل
-                                @else
-                                    <form action="{{route('consaltaions.postponed',$consaltation->id)}}" method="POST">
-                                        @csrf
-                                        @method('PUT')
-                                        <button type="submit" class="btn btn-sm btn-outline-warning d-flex align-items-center m-auto">
-                                            <i class="fa-solid fa-clock-rotate-left"></i>
-                                        </button>
-                                    </form>
-                                @endif
-                            </td>
-                            <td>
-                                <form action="{{route('consaltaions.destroy',$consaltation->id)}}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button  type="submit" class="btn btn-sm btn-outline-danger d-flex align-items-center m-auto">
-                                        <i class="fa-solid fa-trash"></i>
-                                    </button>
-                                </form>
-                            </td>
-                        </tr>
+                                </td>
+                            </tr>
                         @empty
                             <tr>
                                <td colspan="11">لا يوجد بيانات</td> 

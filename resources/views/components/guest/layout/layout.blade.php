@@ -26,17 +26,21 @@
             <div class="row">
                 <div class="col-8 d-flex align-items-center">
                     <div class="mail">
-                        <a href="#" class="me-3"><i class="fa-solid fa-phone me-1"></i><span dir="ltr">+974 336
-                                288</span></a>
-                        <a href="#"><i class="fa-solid fa-paper-plane me-1"></i>info@vtstratgy.com</a>
+                        <a href="#" class="me-3"><i class="fa-solid fa-phone me-1"></i>
+                            <span dir="ltr">
+                                    {{$setting->phone}}
+                            </span>
+                        </a>
+                        <a href="#"><i class="fa-solid fa-paper-plane me-1"></i>
+                        {{$setting->email}}</a>
                     </div>
 
                 </div>
                 <div class="col-4 d-flex justify-content-end">
                     <div class="social-media d-flex align-itmes-center">
-                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#"><i class="fa-brands fa-snapchat"></i></a>
+                        <a href="{{$setting->facebook}}" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="{{$setting->instagram}}" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="{{$setting->snapchat}}" target="_blank"><i class="fa-brands fa-snapchat"></i></a>
                     </div>
                 </div>
             </div>
@@ -135,7 +139,7 @@
                             <li><a href="{{ url('/register') }}"><span class="fa fa-chevron-left me-2"></span>الإشتراك
                                     والتسجيل</a></li>
                             <li><a href="{{ url('/login') }}"><span class="fa fa-chevron-left me-2"></span>تسجيل
-                                    الدهول</a></li>
+                                    الدخول</a></li>
                         </ul>
                     </div>
                 </div>
@@ -143,9 +147,9 @@
                     <div class="footer-widget mb-4">
                         <h2 class="heading-2 ">السياسات والقوانين</h2>
                         <ul class="list-unstyled">
-                            <li><a href="{{ url('/policyandprivacy') }}"><span class="fa fa-chevron-left me-2"></span>السياسة والخصوصية</a></li>
-                            <li><a href="{{ url('/termsandconditions') }}"><span class="fa fa-chevron-left me-2"></span>الشروط والأحكام</a></li>
-                            <li><a href="{{ url('/returnpolicy') }}"><span class="fa fa-chevron-left me-2"></span>سياسة الإسترجاع</a></li>
+                            <li><a href="{{ route('guest.policy')}}"><span class="fa fa-chevron-left me-2"></span>السياسة والخصوصية</a></li>
+                            <li><a href="{{ route('guest.term') }}"><span class="fa fa-chevron-left me-2"></span>الشروط والأحكام</a></li>
+                            <li><a href="{{ route('guest.return') }}"><span class="fa fa-chevron-left me-2"></span>سياسة الإسترجاع</a></li>
                         </ul>
                     </div>
                 </div>
@@ -154,12 +158,11 @@
                         <h2 class="heading-2">معلومات التواصل</h2>
                         <div class="block-23 mb-3">
                             <ul class="list-unstyled">
-                                <li><span class="icon fa fa-map marker me-2"></span><span class="text">جدة، المملكة
-                                        العربية السعودية</span></li>
+                                <li><span class="icon fa fa-map marker me-2"></span><span class="text">{{$setting->address}}</span></li>
                                 <li><a href="#"><span class="icon fa fa-phone me-2"></span><span class="text text-left"
-                                            dir="ltr">+974 354 256</span></a></li>
+                                            dir="ltr">{{$setting->phone}}</span></a></li>
                                 <li><a href="#"><span class="icon fa fa-paper-plane me-2"></span><span
-                                            class="text">info@vtstratgy.com</span></a></li>
+                                            class="text">{{$setting->email}}</span></a></li>
                             </ul>
                         </div>
                     </div>
@@ -175,7 +178,7 @@
                         <p class="mb-0 text-center" style="color: rgba(255,255,255,.5);">
                             الحقوق محفوظة &copy;<script>
                             document.write(new Date().getFullYear());
-                            </script> لشركة رؤية للإستشارات القانونية والحوكمة بواسطة <a
+                            </script> لشركة {{$setting->company_name}} بواسطة <a
                                 href="https://vision-things.com/" target="_blank">رؤية الأشياء للبرمجة</a></p>
                     </div>
                 </div>

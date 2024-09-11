@@ -34,7 +34,7 @@
         <div class="container">
             <h3 class="h2">السياسة والخصوصية</h3>
             <p class="mb-0">
-                محتوي السياسة والخصوصية هنا 
+                {!! $policy->content !!}
             </p>
         </div>
      </div>

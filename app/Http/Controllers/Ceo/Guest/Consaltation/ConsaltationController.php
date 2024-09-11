@@ -35,7 +35,7 @@ class ConsaltationController extends Controller
     public function store(ConsaltationRequest $request)
     {
         $store = Consaltation::create($request->all());
-        return redirect()->route('home.view')->with('success','تم إرسال طلب الحجز بنجاح');
+        return redirect()->route('guest.home.view')->with('success','تم إرسال طلب الحجز بنجاح');
     }
 
     /**

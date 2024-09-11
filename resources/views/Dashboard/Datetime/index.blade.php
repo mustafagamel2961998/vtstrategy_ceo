@@ -22,28 +22,28 @@
                     <!-- الميعاد اللى يفوت المفروض يتمسح اوتوماتيك  -->
                     <tbody>
                         @forelse ($datetimes as $key=> $datetime)
-                        <tr class="row-table">
-                            <td>{{$key+1}}</td>
-                            <td>{{$datetime->date_time->format('l')}}</td>
-                            <td class="message-table">
-                                <p>{{$datetime->date_time->format('Y-m-d')}}</p>
-                                <p>{{$datetime->date_time->format('h:i a')}}</p>
-                            </td>
-                            <td>
-                                <form action="{{route('datetimes.destroy',$datetime->id)}}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button class="btn btn-sm btn-outline-danger d-flex align-items-center m-auto"><i
-                                        class="fa-solid fa-trash"></i>
-                                    </button>
-                                </form>
-                            </td>
-                        </tr>
+                            <tr class="row-table">
+                                <td>{{$key+1}}</td>
+                                <td>{{$datetime->date_time->format('l')}}</td>
+                                <td class="message-table">
+                                    <p>{{$datetime->date_time->format('Y-m-d')}}</p>
+                                    <p>{{$datetime->date_time->format('h:i a')}}</p>
+                                </td>
+                                <td>
+                                    <form action="{{route('datetimes.destroy',$datetime->id)}}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button class="btn btn-sm btn-outline-danger d-flex align-items-center m-auto"><i
+                                            class="fa-solid fa-trash"></i>
+                                        </button>
+                                    </form>
+                                </td>
+                            </tr>
                         @empty
-                        <tr>
-                            <td colspan="4">لا يوجد بيانات</td>
-                        </tr>
-                            
+                            <tr>
+                                <td colspan="4">لا يوجد بيانات</td>
+                            </tr>
+                                
                         @endforelse
                         
                     </tbody>

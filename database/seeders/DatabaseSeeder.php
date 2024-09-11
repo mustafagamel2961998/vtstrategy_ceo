@@ -61,6 +61,10 @@ class DatabaseSeeder extends Seeder
         ]);
         $term->copyMedia(public_path('assets/images/default/term/term.png'))->toMediaCollection('term');
 
+        $policy = Policy::create([
+            'content'=>'السياسة والخصوصية'
+        ]);
+        $policy->copyMedia(public_path('assets/images/default/policy/policy.jpg'))->toMediaCollection('policy');
 
         $return = Returnpolicy::create([
             'content'=>'سياسة الاسترجاع',

@@ -34,7 +34,7 @@
         <div class="container">
             <h3 class="h2">سياسة الإسترجاع</h3>
             <p class="mb-0">
-                محتوي سياسة الإسترجاع هنا 
+                {!! $return->content !!}
             </p>
         </div>
      </div>
