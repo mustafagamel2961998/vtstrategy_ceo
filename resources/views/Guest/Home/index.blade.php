@@ -439,12 +439,13 @@
 
              
             </div>
-            <!-- ظهر الديف ده لو المقالات اكتر من 6 -->
-            <div class="last-footer text-center mt-4">
+            
+        </div>
+        <!-- ظهر الديف ده لو المقالات اكتر من 6 -->
+        <div class="last-footer text-center mt-4">
                 <p>يمكنك قراءة كل المقالات الخاصة بنا</p>
                 <a href="{{ route('guest.articals.index') }}" class="btn main-btn m-auto">كل المقالات</a>
             </div>
-        </div>
     </section>
     <!-- end last articales section -->
 
