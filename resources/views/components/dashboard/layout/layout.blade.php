@@ -78,14 +78,14 @@
                     <a href="{{ route('returns.index') }}"><i class="fa-solid fa-handshake"></i>سياسة الإسترجاع</a>
                 </li>
                 
-                <li class="mt-auto">
+                {{-- <li class="mt-auto">
                     <form action="{{route('auth.logout')}}" method="POST">
                         @csrf
                         <button type="submit">
                             <i class="fa-solid fa-right-from-bracket"></i>تسجيل خروج
                         </button>
                     </form>
-                </li>
+                </li> --}}
             </ul>
         </aside>
 
